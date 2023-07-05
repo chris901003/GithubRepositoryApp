@@ -13,4 +13,9 @@ enum SFSymbols: String {
     case plus = "plus.circle"
     case exclamationmark = "exclamationmark.triangle.fill"
     case checkmark = "checkmark.circle.fill"
+    case edit = "pencil"
+    case triangleUp = "arrowtriangle.up.fill"
+    case triangleDown = "arrowtriangle.down.fill"
+    case person = "person.circle.fill"
+    case folder = "folder.circle.fill"
 }

@@ -12,4 +12,14 @@ extension Text {
         font(fontSize)
             .bold()
     }
+    
+    func fontColor(_ fontSize: Font, _ color: Color) -> Text {
+        font(fontSize)
+            .foregroundColor(color)
+    }
+    
+    func fontColorBold(_ fontSize: Font, _ color: Color) -> Text {
+        fontSizeWithBold(fontSize)
+            .foregroundColor(color)
+    }
 }

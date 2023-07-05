@@ -10,8 +10,11 @@ import SwiftUI
 struct AllRepositoryView: View {
     
     @ObservedObject private var sharedInfo: SharedInfo
+    @State private var editMode: EditMode = .inactive
     @State private var newRepoName: String = ""
     @State private var isAdding: Bool = false
+    
+    @State private var listSelection = Set<String>()
     
     // Private Variable
     private var vm: AllRepositoryViewModel
@@ -23,16 +26,74 @@ struct AllRepositoryView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
+            VStack {
                 addNewRepoView
+                HStack {
+                    Spacer()
+                    Group {
+                        sortButton
+                        editModeChangeButton
+                    }
+                    .padding(8)
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(8)
+                }
+                List(selection: $listSelection) {
+                    ForEach(sharedInfo.allRepo) { repoInfo in
+                        repoInfoView(repoInfo: repoInfo)
+                    }
+                }
+                .environment(\.editMode, .constant(editMode == .active ? .active : .inactive))
+                .animation(Animation.spring(), value: editMode)
+                .listStyle(.plain)
+                
+                VStack {
+                    if editMode == .active { removeRepoButton }
+                }
+                .animation(.spring(dampingFraction: 0.5), value: editMode)
             }
             .padding(.horizontal)
-            .navigationTitle("所有倉庫")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    titleView
+                }
+            }
         }
     }
 }
 
 private extension AllRepositoryView {
+    func repoInfoView(repoInfo: RepositoryModel) -> some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Image(SF: .person)
+                    .resizeFitColor(color: .green)
+                    .frame(width: 20, height: 20)
+                Text("使用者: \(repoInfo.userName ?? "匿名")")
+                    .font(.headline)
+            }
+            HStack {
+                Image(SF: .folder)
+                    .resizeFitColor(color: .orange)
+                    .frame(width: 20, height: 20)
+                Text("倉庫: \(repoInfo.repoName ?? "倉庫")")
+                    .font(.headline)
+            }
+        }
+    }
+}
+
+private extension AllRepositoryView {
+    var titleView: some View {
+        HStack {
+            Image(SF: .box)
+                .resizeFitColor()
+                .frame(width: 45, height: 45)
+            Text("所有倉庫")
+                .fontSizeWithBold(.title)
+        }
+    }
+    
     var addNewRepoView: some View {
         HStack {
             TextField("Ex: chris901003/SwiftLearning", text: $newRepoName)
@@ -60,10 +121,79 @@ private extension AllRepositoryView {
         }
         .padding(.top)
     }
+    
+    var sortButton: some View {
+        Button {
+            Task { await vm.sortAllRepo() }
+        } label: {
+            HStack {
+                VStack(spacing: 2) {
+                    Image(SF: .triangleUp)
+                        .resizeFitColor(color: .blue)
+                        .frame(width: 8, height: 8)
+                    Image(SF: .triangleDown)
+                        .resizeFitColor(color: .blue)
+                        .frame(width: 8, height: 8)
+                }
+                Text("排序")
+                    .fontColor(.headline, .blue)
+            }
+            .twoWayPadding(types: [.vertical, .horizontal], sizes: [8, 16])
+            .background(.ultraThinMaterial)
+            .cornerRadius(10)
+        }
+    }
+    
+    var editModeChangeButton: some View {
+        Button(action: changeEditMode) {
+            HStack {
+                Image(SF: .edit)
+                    .resizeFitColor(color: .blue)
+                    .frame(width: 20, height: 20)
+                Text(editMode == .active ? "結束" : "編輯")
+                    .fontColor(.headline, .blue)
+            }
+            .twoWayPadding(types: [.vertical, .horizontal], sizes: [8, 16])
+            .background(.ultraThinMaterial)
+            .cornerRadius(10)
+        }
+    }
+    
+    var removeRepoButton: some View {
+        Button {
+            Task {
+                await vm.removeSelectedRepo(selection: listSelection)
+                listSelection.removeAll()
+            }
+            editMode = .inactive
+        } label: {
+            Text("移除所有選項")
+                .fontColorBold(.title2, .white)
+                .twoWayPadding(types: [.vertical, .horizontal], sizes: [8, 0])
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(Color.blue)
+                )
+                .padding(.bottom, 8)
+        }
+        .transition(AnyTransition.scale)
+    }
+}
+
+private extension AllRepositoryView {
+    func changeEditMode() {
+        editMode = editModeStatus
+    }
+}
+
+private extension AllRepositoryView {
+    var editModeStatus: EditMode {
+        editMode == .active ? .inactive : .active
+    }
 }
 
 struct AllRepositoryView_Previews: PreviewProvider {
     static var previews: some View {
-        AllRepositoryView(sharedInfo: SharedInfo())
+        AllRepositoryView(sharedInfo: SharedInfo.mockDataInit())
     }
 }

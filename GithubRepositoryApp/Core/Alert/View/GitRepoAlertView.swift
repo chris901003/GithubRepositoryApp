@@ -40,7 +40,7 @@ struct GitRepoAlertView: View {
                 }
                 .clipped()
                 .twoWayPadding(types: [.vertical, .horizontal], sizes: [8, 0])
-                .background(type.mainColor.opacity(0.1))
+                .background(type.backgroundColor)
                 .cornerRadius(10)
                 .onAppear {
                     withAnimation(.linear(duration: 0.7).repeatForever(autoreverses: true)) {
@@ -88,6 +88,15 @@ extension GitRepoAlertView {
                     return Color.green.gradient
                 case .error:
                     return Color.pink.gradient
+            }
+        }
+        
+        var backgroundColor: Color {
+            switch self {
+                case .success:
+                    return Color(hex: "#d6f4de")
+                case .error:
+                    return Color(hex: "#ffeaee")
             }
         }
     }

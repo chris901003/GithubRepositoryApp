@@ -20,6 +20,11 @@
 		059BF5B02A545B73009985EB /* GitRepoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5AF2A545B73009985EB /* GitRepoAlertView.swift */; };
 		059BF5B42A546252009985EB /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5B32A546252009985EB /* Text+.swift */; };
 		059BF5B72A546B34009985EB /* Shape+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5B62A546B34009985EB /* Shape+.swift */; };
+		059BF5BA2A55346E009985EB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5B92A55346E009985EB /* String+.swift */; };
+		059BF5BD2A554B75009985EB /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5BC2A554B75009985EB /* RepositoryModel.swift */; };
+		059BF5C02A5550B3009985EB /* OperationOverloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5BF2A5550B3009985EB /* OperationOverloading.swift */; };
+		059BF5C32A5553D9009985EB /* Sequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5C22A5553D9009985EB /* Sequence+.swift */; };
+		059BF5C62A55BEAD009985EB /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5C52A55BEAD009985EB /* Color+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		059BF5AF2A545B73009985EB /* GitRepoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoAlertView.swift; sourceTree = "<group>"; };
 		059BF5B32A546252009985EB /* Text+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+.swift"; sourceTree = "<group>"; };
 		059BF5B62A546B34009985EB /* Shape+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+.swift"; sourceTree = "<group>"; };
+		059BF5B92A55346E009985EB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		059BF5BC2A554B75009985EB /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		059BF5BF2A5550B3009985EB /* OperationOverloading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationOverloading.swift; sourceTree = "<group>"; };
+		059BF5C22A5553D9009985EB /* Sequence+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+.swift"; sourceTree = "<group>"; };
+		059BF5C52A55BEAD009985EB /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,7 @@
 				052138B72A54506A003C7616 /* Info.plist */,
 				052138A32A543998003C7616 /* Extensions */,
 				052138A42A543A02003C7616 /* SFSymbols */,
+				059BF5BE2A55509F009985EB /* Utils */,
 				0521389E2A5437D9003C7616 /* Core */,
 				052138902A5435B8003C7616 /* GithubRepositoryAppApp.swift */,
 				052138942A5435B8003C7616 /* Assets.xcassets */,
@@ -119,6 +130,9 @@
 		052138A32A543998003C7616 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				059BF5C42A55BEA8009985EB /* Color */,
+				059BF5C12A5553CC009985EB /* Sequence */,
+				059BF5B82A553467009985EB /* String */,
 				059BF5B52A546B2C009985EB /* Shape */,
 				059BF5B22A54624A009985EB /* Text */,
 				052138B42A544F79003C7616 /* View */,
@@ -163,6 +177,7 @@
 		052138AE2A543DC7003C7616 /* SharedInfo */ = {
 			isa = PBXGroup;
 			children = (
+				059BF5BB2A554B66009985EB /* Model */,
 				052138AF2A543E1C003C7616 /* SharedInfo.swift */,
 			);
 			path = SharedInfo;
@@ -214,6 +229,46 @@
 				059BF5B62A546B34009985EB /* Shape+.swift */,
 			);
 			path = Shape;
+			sourceTree = "<group>";
+		};
+		059BF5B82A553467009985EB /* String */ = {
+			isa = PBXGroup;
+			children = (
+				059BF5B92A55346E009985EB /* String+.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		059BF5BB2A554B66009985EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				059BF5BC2A554B75009985EB /* RepositoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		059BF5BE2A55509F009985EB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				059BF5BF2A5550B3009985EB /* OperationOverloading.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		059BF5C12A5553CC009985EB /* Sequence */ = {
+			isa = PBXGroup;
+			children = (
+				059BF5C22A5553D9009985EB /* Sequence+.swift */,
+			);
+			path = Sequence;
+			sourceTree = "<group>";
+		};
+		059BF5C42A55BEA8009985EB /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				059BF5C52A55BEAD009985EB /* Color+.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +342,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				052138A22A5437F9003C7616 /* RootView.swift in Sources */,
+				059BF5C62A55BEAD009985EB /* Color+.swift in Sources */,
 				052138A92A543BA8003C7616 /* Image+.swift in Sources */,
+				059BF5C02A5550B3009985EB /* OperationOverloading.swift in Sources */,
+				059BF5C32A5553D9009985EB /* Sequence+.swift in Sources */,
 				059BF5B02A545B73009985EB /* GitRepoAlertView.swift in Sources */,
 				052138B02A543E1C003C7616 /* SharedInfo.swift in Sources */,
 				059BF5B72A546B34009985EB /* Shape+.swift in Sources */,
@@ -296,6 +354,8 @@
 				052138AD2A543C8F003C7616 /* AllRepositoryView.swift in Sources */,
 				052138B32A54455D003C7616 /* AllRepositoryViewModel.swift in Sources */,
 				059BF5B42A546252009985EB /* Text+.swift in Sources */,
+				059BF5BD2A554B75009985EB /* RepositoryModel.swift in Sources */,
+				059BF5BA2A55346E009985EB /* String+.swift in Sources */,
 				052138A62A543A1E003C7616 /* SFSymbols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
