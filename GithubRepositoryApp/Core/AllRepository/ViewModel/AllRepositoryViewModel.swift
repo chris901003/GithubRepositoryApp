@@ -31,6 +31,8 @@ extension AllRepositoryViewModel {
             sharedInfo.alertType = .error
         } else {
             // 添加新倉庫
+            sharedInfo.alertMessage = ModifyRepoError.addSuccess
+            sharedInfo.alertType = .success
             sharedInfo.allRepo.append(newRepoName)
         }
     }
@@ -40,5 +42,6 @@ extension AllRepositoryViewModel {
     enum ModifyRepoError: String, LocalizedError {
         case emptyRepoName = "名稱不可為空"
         case duplicateRepo = "已存在"
+        case addSuccess = "成功添加"
     }
 }

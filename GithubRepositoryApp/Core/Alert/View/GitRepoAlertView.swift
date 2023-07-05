@@ -21,27 +21,26 @@ struct GitRepoAlertView: View {
                 Spacer()
                 VStack(spacing: 4) {
                     HStack {
-                        Image(SF: .exclamationmark)
-                            .resizeFitColor(color: .pink)
+                        Image(SF: type.icon)
+                            .resizeFitColor(color: type.mainColor)
                             .frame(width: 50, height: 50)
                         VStack(alignment: .leading) {
-                            Text("錯誤")
+                            Text(type.rawValue)
                                 .fontSizeWithBold(.title3)
-                                .foregroundColor(Color.pink)
+                                .foregroundColor(type.mainColor)
                             Text(message)
                                 .font(.headline)
-                                .foregroundStyle(Color.pink.gradient)
+                                .foregroundStyle(type.secondaryColor)
                         }
                     }
                     RoundedRectangle(cornerRadius: 5)
                         .frame(width: 100, height: 3)
-                        .foregroundStyle(Color.pink)
+                        .foregroundStyle(type.mainColor)
                         .offset(x: bottomBarXOffset)
                 }
                 .clipped()
-                .padding(.vertical, 8)
-                .padding(.horizontal)
-                .background(Color.pink.opacity(0.1))
+                .twoWayPadding(types: [.vertical, .horizontal], sizes: [8, 0])
+                .background(type.mainColor.opacity(0.1))
                 .cornerRadius(10)
                 .onAppear {
                     withAnimation(.linear(duration: 0.7).repeatForever(autoreverses: true)) {
@@ -52,13 +51,45 @@ struct GitRepoAlertView: View {
             Spacer()
         }
         .transition(AnyTransition.move(edge: .trailing))
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                sharedInfo.removeAlert()
+            }
+        }
     }
 }
 
 extension GitRepoAlertView {
     enum AlterType: String {
         case success = "成功"
-        case error = "失敗"
+        case error = "錯誤"
+        
+        var icon: SFSymbols {
+            switch self {
+                case .success:
+                    return .checkmark
+                case .error:
+                    return .exclamationmark
+            }
+        }
+        
+        var mainColor: Color {
+            switch self {
+                case .success:
+                    return .green
+                case .error:
+                    return .pink
+            }
+        }
+        
+        var secondaryColor: AnyGradient {
+            switch self {
+                case .success:
+                    return Color.green.gradient
+                case .error:
+                    return Color.pink.gradient
+            }
+        }
     }
 }
 

@@ -14,5 +14,11 @@ final class SharedInfo: ObservableObject {
     
     @Published var alertType: GitRepoAlertView.AlterType? = nil
     @Published var alertMessage: (any RawRepresentable & LocalizedError)? = nil
-    
+}
+
+extension SharedInfo {
+    func removeAlert() {
+        alertType = nil
+        alertMessage = nil
+    }
 }

@@ -12,4 +12,5 @@ enum SFSymbols: String {
     case favorite = "star.fill"
     case plus = "plus.circle"
     case exclamationmark = "exclamationmark.triangle.fill"
+    case checkmark = "checkmark.circle.fill"
 }

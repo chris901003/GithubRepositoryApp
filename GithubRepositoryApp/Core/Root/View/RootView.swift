@@ -30,8 +30,10 @@ struct RootView: View {
                 if let message = sharedInfo.alertMessage?.rawValue as? String,
                    let type = sharedInfo.alertType {
                     GitRepoAlertView(message: message, type: type)
+                        .transition(AnyTransition.move(edge: .trailing))
                 }
             }
+            .animation(.easeOut(duration: 0.3), value: sharedInfo.alertType)
         }
     }
 }
