@@ -85,6 +85,19 @@ class AllRepositoryViewModelTest: XCTestCase {
             XCTAssertEqual(repo[1].repoLink, "2/2")
         }
     }
+    
+    func testFavoriate() throws {
+        Task { @MainActor in
+            let sharedInfo: SharedInfo = .init()
+            let sut: AllRepositoryViewModel = .init(sharedInfo: sharedInfo)
+            await sut.addNewRepo("1/1")
+            XCTAssertNotNil(sharedInfo.allRepo.first)
+            await sut.changeFavoriateState(repoInfo: sharedInfo.allRepo.first!)
+            XCTAssertEqual(sharedInfo.allRepo.first?.isFavoriate, true)
+            await sut.changeFavoriateState(repoInfo: sharedInfo.allRepo.first!)
+            XCTAssertEqual(sharedInfo.allRepo.first?.isFavoriate, false)
+        }
+    }
 }
 
 private extension AllRepositoryViewModelTest {

@@ -21,7 +21,7 @@ struct RootView: View {
                     }
                 Text("Favorite")
                     .tabItem {
-                        Image(SF: .favorite)
+                        Image(SF: .fillStar)
                         Text("喜好")
                     }
             }

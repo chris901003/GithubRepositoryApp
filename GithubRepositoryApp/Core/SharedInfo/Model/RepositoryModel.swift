@@ -9,6 +9,7 @@ import Foundation
 
 struct RepositoryModel: Identifiable {
     var repoLink: String
+    var isFavoriate: Bool = false
     
     var seperateLink: [String] { repoLink.components(separatedBy: "/") }
     var userName: String? { seperateLink.first }

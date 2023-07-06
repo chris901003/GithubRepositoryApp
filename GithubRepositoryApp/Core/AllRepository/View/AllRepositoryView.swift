@@ -64,21 +64,30 @@ struct AllRepositoryView: View {
 
 private extension AllRepositoryView {
     func repoInfoView(repoInfo: RepositoryModel) -> some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Image(SF: .person)
-                    .resizeFitColor(color: .green)
-                    .frame(width: 20, height: 20)
-                Text("使用者: \(repoInfo.userName ?? "匿名")")
-                    .font(.headline)
+        HStack {
+            VStack(alignment: .leading) {
+                HStack {
+                    Image(SF: .person)
+                        .resizeFitColor(color: .green)
+                        .frame(width: 20, height: 20)
+                    Text("使用者: \(repoInfo.userName ?? "匿名")")
+                        .font(.headline)
+                }
+                HStack {
+                    Image(SF: .folder)
+                        .resizeFitColor(color: .orange)
+                        .frame(width: 20, height: 20)
+                    Text("倉庫: \(repoInfo.repoName ?? "倉庫")")
+                        .font(.headline)
+                }
             }
-            HStack {
-                Image(SF: .folder)
-                    .resizeFitColor(color: .orange)
-                    .frame(width: 20, height: 20)
-                Text("倉庫: \(repoInfo.repoName ?? "倉庫")")
-                    .font(.headline)
-            }
+            Spacer()
+            Image(SF: repoInfo.isFavoriate ? .fillStar : .emptyStar)
+                .resizeFitColor(color: .yellow)
+                .frame(width: 20, height: 20)
+                .onTapGesture {
+                    Task { await vm.changeFavoriateState(repoInfo: repoInfo) }
+                }
         }
     }
 }
@@ -138,9 +147,6 @@ private extension AllRepositoryView {
                 Text("排序")
                     .fontColor(.headline, .blue)
             }
-            .twoWayPadding(types: [.vertical, .horizontal], sizes: [8, 16])
-            .background(.ultraThinMaterial)
-            .cornerRadius(10)
         }
     }
     
@@ -153,9 +159,6 @@ private extension AllRepositoryView {
                 Text(editMode == .active ? "結束" : "編輯")
                     .fontColor(.headline, .blue)
             }
-            .twoWayPadding(types: [.vertical, .horizontal], sizes: [8, 16])
-            .background(.ultraThinMaterial)
-            .cornerRadius(10)
         }
     }
     

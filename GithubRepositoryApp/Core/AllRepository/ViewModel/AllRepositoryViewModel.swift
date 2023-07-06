@@ -54,6 +54,13 @@ extension AllRepositoryViewModel {
     func removeSelectedRepo(selection: Set<String>) async {
         sharedInfo.allRepo.removeAll { selection.contains($0.repoLink) }
     }
+    
+    @MainActor
+    func changeFavoriateState(repoInfo: RepositoryModel) async {
+        let idx = sharedInfo.allRepo.targetIdx(\.repoLink, target: repoInfo.repoLink)
+        guard let idx = idx else { return }
+        sharedInfo.allRepo[idx].isFavoriate.toggle()
+    }
 }
 
 private extension AllRepositoryViewModel {
