@@ -22,6 +22,23 @@ struct RepositoryOwnerModel {
     }
 }
 
+extension RepositoryOwnerModel: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case name = "login"
+        case photoLink = "avatar_url"
+        case githubLink = "url"
+    }
+    
+    init(from decoder: Decoder) throws {
+        // 全部的URL都使用Force Unwrapped
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.photoLink = try container.decode(String.self, forKey: .photoLink).toURL()!
+        self.githubLink = try container.decode(String.self, forKey: .githubLink).toURL()!
+    }
+}
+
+// MARK: Mock Data
 extension RepositoryOwnerModel {
     static func mock() -> Self {
         .init(name: "chris901003",

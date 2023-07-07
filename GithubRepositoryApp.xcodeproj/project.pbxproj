@@ -35,6 +35,11 @@
 		059AF5C72A57ABCE003A3BA4 /* CacheAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5C52A57ABCE003A3BA4 /* CacheAsyncImageView.swift */; };
 		059AF5CC2A57B775003A3BA4 /* URLSession+uiImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5CB2A57B775003A3BA4 /* URLSession+uiImageTest.swift */; };
 		059AF5CF2A57E356003A3BA4 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5CE2A57E356003A3BA4 /* Date+.swift */; };
+		059AF5D22A584BE5003A3BA4 /* Http+HttpsRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5D12A584BE5003A3BA4 /* Http+HttpsRequestManager.swift */; };
+		059AF5D32A585638003A3BA4 /* Http+HttpsRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5D12A584BE5003A3BA4 /* Http+HttpsRequestManager.swift */; };
+		059AF5D52A58564C003A3BA4 /* Http+HttpsRequestManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5D42A58564C003A3BA4 /* Http+HttpsRequestManagerTest.swift */; };
+		059AF5D62A58570F003A3BA4 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5CE2A57E356003A3BA4 /* Date+.swift */; };
+		059AF5D72A585731003A3BA4 /* AllRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052138AC2A543C8F003C7616 /* AllRepositoryView.swift */; };
 		059BF5B02A545B73009985EB /* GitRepoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5AF2A545B73009985EB /* GitRepoAlertView.swift */; };
 		059BF5B42A546252009985EB /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5B32A546252009985EB /* Text+.swift */; };
 		059BF5B72A546B34009985EB /* Shape+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5B62A546B34009985EB /* Shape+.swift */; };
@@ -92,6 +97,8 @@
 		059AF5C52A57ABCE003A3BA4 /* CacheAsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImageView.swift; sourceTree = "<group>"; };
 		059AF5CB2A57B775003A3BA4 /* URLSession+uiImageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+uiImageTest.swift"; sourceTree = "<group>"; };
 		059AF5CE2A57E356003A3BA4 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		059AF5D12A584BE5003A3BA4 /* Http+HttpsRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Http+HttpsRequestManager.swift"; sourceTree = "<group>"; };
+		059AF5D42A58564C003A3BA4 /* Http+HttpsRequestManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Http+HttpsRequestManagerTest.swift"; sourceTree = "<group>"; };
 		059BF5AF2A545B73009985EB /* GitRepoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoAlertView.swift; sourceTree = "<group>"; };
 		059BF5B32A546252009985EB /* Text+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+.swift"; sourceTree = "<group>"; };
 		059BF5B62A546B34009985EB /* Shape+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+.swift"; sourceTree = "<group>"; };
@@ -147,6 +154,7 @@
 				052138A32A543998003C7616 /* Extensions */,
 				052138A42A543A02003C7616 /* SFSymbols */,
 				059BF5BE2A55509F009985EB /* Utils */,
+				059AF5D02A584BAE003A3BA4 /* Manager */,
 				059AF5C42A57AB9C003A3BA4 /* CommonView */,
 				0521389E2A5437D9003C7616 /* Core */,
 				052138902A5435B8003C7616 /* GithubRepositoryAppApp.swift */,
@@ -343,6 +351,14 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
+		059AF5D02A584BAE003A3BA4 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				059AF5D12A584BE5003A3BA4 /* Http+HttpsRequestManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		059BF5B22A54624A009985EB /* Text */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +420,7 @@
 			children = (
 				059BF5D42A55C667009985EB /* AllRepositoryViewModelTest.swift */,
 				059AF5CB2A57B775003A3BA4 /* URLSession+uiImageTest.swift */,
+				059AF5D42A58564C003A3BA4 /* Http+HttpsRequestManagerTest.swift */,
 			);
 			path = GithubRepositoryAppTests;
 			sourceTree = "<group>";
@@ -525,6 +542,7 @@
 				059BF5C32A5553D9009985EB /* Sequence+.swift in Sources */,
 				059AF5CF2A57E356003A3BA4 /* Date+.swift in Sources */,
 				059BF5B02A545B73009985EB /* GitRepoAlertView.swift in Sources */,
+				059AF5D22A584BE5003A3BA4 /* Http+HttpsRequestManager.swift in Sources */,
 				052138B02A543E1C003C7616 /* SharedInfo.swift in Sources */,
 				059AF5BF2A57AB1B003A3BA4 /* URLSession+.swift in Sources */,
 				059BF5B72A546B34009985EB /* Shape+.swift in Sources */,
@@ -555,10 +573,14 @@
 				059AF5AE2A56B2EA003A3BA4 /* RepositoryDetailView.swift in Sources */,
 				059BF5DD2A55C93C009985EB /* SFSymbols.swift in Sources */,
 				059BF5E12A55C95B009985EB /* View+.swift in Sources */,
+				059AF5D72A585731003A3BA4 /* AllRepositoryView.swift in Sources */,
 				059BF5D92A55C8B6009985EB /* GitRepoAlertView.swift in Sources */,
 				059AF5C72A57ABCE003A3BA4 /* CacheAsyncImageView.swift in Sources */,
+				059AF5D52A58564C003A3BA4 /* Http+HttpsRequestManagerTest.swift in Sources */,
 				059AF5B62A56FEAD003A3BA4 /* RepositoryDetailModel.swift in Sources */,
 				059AF5CC2A57B775003A3BA4 /* URLSession+uiImageTest.swift in Sources */,
+				059AF5D32A585638003A3BA4 /* Http+HttpsRequestManager.swift in Sources */,
+				059AF5D62A58570F003A3BA4 /* Date+.swift in Sources */,
 				059BF5E22A55C95E009985EB /* Image+.swift in Sources */,
 				059BF5DC2A55C931009985EB /* OperationOverloading.swift in Sources */,
 				059BF5D72A55C6F6009985EB /* SharedInfo.swift in Sources */,

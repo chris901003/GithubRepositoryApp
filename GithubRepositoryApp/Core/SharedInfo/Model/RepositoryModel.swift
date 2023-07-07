@@ -19,7 +19,7 @@ struct RepositoryModel: Identifiable {
 }
 
 extension RepositoryModel {
-    init(mock: Bool) {
-        self.repoLink = "chris901003/GithubRepositoryApp"
+    static func mock() -> RepositoryModel {
+        .init(repoLink: "chris901003/GithubRepositoryApp")
     }
 }

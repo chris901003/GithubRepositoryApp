@@ -14,7 +14,7 @@ struct AllRepositoryView: View {
     @State private var newRepoName: String = ""
     @State private var isAdding: Bool = false
     @State private var listSelection = Set<String>()
-    @State private var repoDetailSelecte: RepositoryModel? = .init(mock: true)
+    @State private var repoDetailSelecte: RepositoryModel? = .mock()
     @State private var sheetViewSize: CGFloat = SheetSizePreference.defaultValue
     
     // Private Variable
@@ -61,7 +61,7 @@ struct AllRepositoryView: View {
                 }
             }
             .sheet(isPresented: .constant(isShowRepoDetailSheet)) {
-                RepositoryDetailView(repoInfo: $repoDetailSelecte)
+                RepositoryDetailView(sharedInfo: sharedInfo, repoInfo: $repoDetailSelecte)
                     .onPreferenceChange(SheetSizePreference.self) { sheetViewSize = $0 }
                     .presentationDetents([.height(sheetViewSize)])
             }

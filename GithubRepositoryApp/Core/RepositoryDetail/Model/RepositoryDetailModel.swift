@@ -23,7 +23,7 @@ struct RepositoryDetailModel {
     var mainLanguage: String
     // Ex: "stargazers_count": 1
     var stars: Int
-    // Ex: "stargazers_count": 1
+    // Ex: "forks_count": 0
     var forks: Int
     // Ex: "open_issues": 0
     var issues: Int
@@ -44,6 +44,37 @@ struct RepositoryDetailModel {
     }
 }
 
+extension RepositoryDetailModel: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case fullName = "full_name"
+        case owner
+        case repoLink = "html_url"
+        case languagesUseLink = "languages_url"
+        case lastPushTime = "pushed_at"
+        case mainLanguage = "language"
+        case stars = "stargazers_count"
+        case forks = "forks_count"
+        case issues = "open_issues"
+    }
+    
+    init(from decoder: Decoder) throws {
+        // 全部的URL都使用Force Unwrapped
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.fullName = try container.decode(String.self, forKey: .fullName)
+        self.owner = try container.decode(RepositoryOwnerModel.self, forKey: .owner)
+        self.repoLink = try container.decode(String.self, forKey: .repoLink).toURL()!
+        self.languagesUseLink = try container.decode(String.self, forKey: .languagesUseLink).toURL()!
+        self.lastPushTime = try container.decode(String.self, forKey: .lastPushTime)
+        self.mainLanguage = try container.decode(String.self, forKey: .mainLanguage)
+        self.stars = try container.decode(Int.self, forKey: .stars)
+        self.forks = try container.decode(Int.self, forKey: .forks)
+        self.issues = try container.decode(Int.self, forKey: .issues)
+        // FIXME: 最後需要從[languagesUseLink]抓取資料
+        self.languagesUse = [("Swift", 25337), ("C++", 1201)]
+    }
+}
+
+// MARK: Compute variable
 extension RepositoryDetailModel {
     // 倉庫名稱
     var repoName: String { fullName.components(separatedBy: "/")[1] }

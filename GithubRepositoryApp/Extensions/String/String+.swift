@@ -24,4 +24,7 @@ extension String {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         return dateFormatter.date(from: self)
     }
+    
+    /// 將String轉換成URL
+    func toURL() -> URL? { URL(string: self) }
 }

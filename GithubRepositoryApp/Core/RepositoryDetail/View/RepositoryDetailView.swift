@@ -12,9 +12,9 @@ struct RepositoryDetailView: View {
     @Binding var repoInfo: RepositoryModel?
     @ObservedObject var vm: RepositoryDetailViewModel
     
-    init(repoInfo: Binding<RepositoryModel?>) {
+    init(sharedInfo: SharedInfo, repoInfo: Binding<RepositoryModel?>) {
         self._repoInfo = .init(projectedValue: repoInfo)
-        self._vm = .init(initialValue: .init(repoLink: repoInfo.wrappedValue!.repoLink))
+        self._vm = .init(initialValue: .init(sharedInfo: sharedInfo, repoName: repoInfo.wrappedValue!.repoLink))
     }
     
     var body: some View {
