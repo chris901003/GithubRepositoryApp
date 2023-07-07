@@ -17,4 +17,11 @@ extension String {
         }
         return result
     }
+    
+    /// 將格式為「yyyy-MM-dd'T'HH:mm:ssZ」轉成對應的Date資訊
+    func convertToDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return dateFormatter.date(from: self)
+    }
 }

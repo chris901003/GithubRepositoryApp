@@ -34,6 +34,7 @@
 		059AF5C62A57ABCE003A3BA4 /* CacheAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5C52A57ABCE003A3BA4 /* CacheAsyncImageView.swift */; };
 		059AF5C72A57ABCE003A3BA4 /* CacheAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5C52A57ABCE003A3BA4 /* CacheAsyncImageView.swift */; };
 		059AF5CC2A57B775003A3BA4 /* URLSession+uiImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5CB2A57B775003A3BA4 /* URLSession+uiImageTest.swift */; };
+		059AF5CF2A57E356003A3BA4 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5CE2A57E356003A3BA4 /* Date+.swift */; };
 		059BF5B02A545B73009985EB /* GitRepoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5AF2A545B73009985EB /* GitRepoAlertView.swift */; };
 		059BF5B42A546252009985EB /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5B32A546252009985EB /* Text+.swift */; };
 		059BF5B72A546B34009985EB /* Shape+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5B62A546B34009985EB /* Shape+.swift */; };
@@ -90,6 +91,7 @@
 		059AF5C12A57AB29003A3BA4 /* URLCache+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLCache+.swift"; sourceTree = "<group>"; };
 		059AF5C52A57ABCE003A3BA4 /* CacheAsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImageView.swift; sourceTree = "<group>"; };
 		059AF5CB2A57B775003A3BA4 /* URLSession+uiImageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+uiImageTest.swift"; sourceTree = "<group>"; };
+		059AF5CE2A57E356003A3BA4 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		059BF5AF2A545B73009985EB /* GitRepoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoAlertView.swift; sourceTree = "<group>"; };
 		059BF5B32A546252009985EB /* Text+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+.swift"; sourceTree = "<group>"; };
 		059BF5B62A546B34009985EB /* Shape+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+.swift"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		052138A32A543998003C7616 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				059AF5CD2A57E34F003A3BA4 /* Date */,
 				059AF5BD2A57AAFE003A3BA4 /* URL */,
 				059BF5E32A5671F7009985EB /* Collection */,
 				059BF5C42A55BEA8009985EB /* Color */,
@@ -330,6 +333,14 @@
 				059AF5C52A57ABCE003A3BA4 /* CacheAsyncImageView.swift */,
 			);
 			path = CommonView;
+			sourceTree = "<group>";
+		};
+		059AF5CD2A57E34F003A3BA4 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				059AF5CE2A57E356003A3BA4 /* Date+.swift */,
+			);
+			path = Date;
 			sourceTree = "<group>";
 		};
 		059BF5B22A54624A009985EB /* Text */ = {
@@ -512,6 +523,7 @@
 				059AF5A82A56721E003A3BA4 /* Collection+.swift in Sources */,
 				059BF5C02A5550B3009985EB /* OperationOverloading.swift in Sources */,
 				059BF5C32A5553D9009985EB /* Sequence+.swift in Sources */,
+				059AF5CF2A57E356003A3BA4 /* Date+.swift in Sources */,
 				059BF5B02A545B73009985EB /* GitRepoAlertView.swift in Sources */,
 				052138B02A543E1C003C7616 /* SharedInfo.swift in Sources */,
 				059AF5BF2A57AB1B003A3BA4 /* URLSession+.swift in Sources */,

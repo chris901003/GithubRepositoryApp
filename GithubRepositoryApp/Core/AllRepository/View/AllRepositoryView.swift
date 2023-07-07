@@ -13,9 +13,9 @@ struct AllRepositoryView: View {
     @State private var editMode: EditMode = .inactive
     @State private var newRepoName: String = ""
     @State private var isAdding: Bool = false
-    
     @State private var listSelection = Set<String>()
     @State private var repoDetailSelecte: RepositoryModel? = .init(mock: true)
+    @State private var sheetViewSize: CGFloat = SheetSizePreference.defaultValue
     
     // Private Variable
     private var vm: AllRepositoryViewModel
@@ -62,7 +62,19 @@ struct AllRepositoryView: View {
             }
             .sheet(isPresented: .constant(isShowRepoDetailSheet)) {
                 RepositoryDetailView(repoInfo: $repoDetailSelecte)
+                    .onPreferenceChange(SheetSizePreference.self) { sheetViewSize = $0 }
+                    .presentationDetents([.height(sheetViewSize)])
             }
+        }
+    }
+}
+
+extension AllRepositoryView {
+    struct SheetSizePreference: PreferenceKey {
+        static var defaultValue: CGFloat = 300
+        
+        static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+            value = nextValue()
         }
     }
 }

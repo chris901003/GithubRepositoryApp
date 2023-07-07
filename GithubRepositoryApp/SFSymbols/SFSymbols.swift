@@ -20,4 +20,5 @@ enum SFSymbols: String {
     case emptyStar = "star"
     case fillStar = "star.fill"
     case xmark = "xmark"
+    case fork = "tuningfork"
 }

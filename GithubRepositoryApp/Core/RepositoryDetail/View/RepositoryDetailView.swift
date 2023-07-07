@@ -21,8 +21,108 @@ struct RepositoryDetailView: View {
         VStack {
             hintBarView
             closeButton
-            CacheAsyncImageView(url: URL(string: vm.repoInfo.owner.photoLink)!)
-            Spacer()
+            
+            VStack(spacing: 32) {
+                titleView
+                repoInfoView
+                repoLanguageView
+                repoOwnerView
+            }
+        }
+        .overlay {
+            GeometryReader { proxy in
+                Color.clear
+                    .preference(key: AllRepositoryView.SheetSizePreference.self, value: proxy.size.height)
+            }
+        }
+    }
+}
+
+private extension RepositoryDetailView {
+    var titleView: some View {
+        HStack {
+            Image(SF: .box)
+                .resizeFitColor()
+                .frame(width: 25, height: 25)
+            Text(vm.repoInfo.repoName)
+                .fontSizeWithBold(.title3)
+        }
+        .padding(.bottom)
+    }
+    
+    var repoInfoView: some View {
+        HStack {
+            Text("\(vm.repoInfo.lastUpdatePassTime)")
+                .font(.system(size: 75))
+                .frame(minWidth: 40)
+                .overlay(
+                    GeometryReader { proxy in
+                        Text("days")
+                            .font(.headline)
+                            .offset(x: proxy.size.width + 5, y: proxy.size.height - 30)
+                    }
+                )
+                .padding(.trailing, 55)
+            Grid(verticalSpacing: 4) {
+                someInfoView(image: .fillStar, title: "Stars", vm.repoInfo.stars)
+                someInfoView(image: .fork, title: "Forks", vm.repoInfo.forks)
+                someInfoView(image: .exclamationmark, title: "Issues", vm.repoInfo.issues)
+            }
+            .foregroundColor(Color.secondary)
+        }
+        .foregroundColor(vm.repoInfo.updatePassTimeColor)
+    }
+    
+    var repoLanguageView: some View {
+        VStack {
+            HStack {
+                Image("coding")
+                    .resizeFitColor()
+                    .frame(width: 30, height: 30)
+                Text("Coding Language")
+                    .fontSizeWithBold(.title3)
+            }
+            Grid {
+                ForEach(vm.repoInfo.languagesUse, id: \.name) { languageInfo in
+                    GridRow {
+                        Text("\(languageInfo.name): ").gridColumnAlignment(.leading)
+                        Text("\(languageInfo.lines)").gridColumnAlignment(.trailing)
+                    }
+                    .font(.headline)
+                    .padding(.bottom, 4)
+                }
+            }
+        }
+    }
+    
+    var repoOwnerView: some View {
+        HStack {
+            CacheAsyncImageView(url: vm.repoInfo.owner.photoLink)
+                .frame(width: 60, height: 60)
+                .clipShape(Circle())
+                .padding(.trailing, 8)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(vm.repoInfo.owner.name)
+                    .fontSizeWithBold(.title3)
+                HStack {
+                    Image("github-logo")
+                        .resizeFitColor()
+                        .frame(width: 20, height: 20)
+                    Link("Github", destination: vm.repoInfo.owner.githubLink)
+                }
+            }
+        }
+    }
+}
+
+private extension RepositoryDetailView {
+    func someInfoView(image imageName: SFSymbols, title: String, _ message: Int) -> some View {
+        GridRow {
+            Image(SF: imageName)
+                .resizeFitColor(color: .secondary)
+                .frame(width: 15, height: 15)
+            Text(title).gridColumnAlignment(.leading)
+            Text("\(message)").gridColumnAlignment(.trailing)
         }
     }
 }
