@@ -55,6 +55,7 @@ extension AllRepositoryViewModel {
         sharedInfo.allRepo.removeAll { selection.contains($0.repoLink) }
     }
     
+    /// 更換喜歡狀態，如果當前未加入喜歡就會加入否則就會取消
     @MainActor
     func changeFavoriateState(repoInfo: RepositoryModel) async {
         let idx = sharedInfo.allRepo.targetIdx(\.repoLink, target: repoInfo.repoLink)

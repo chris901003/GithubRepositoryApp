@@ -19,4 +19,5 @@ enum SFSymbols: String {
     case folder = "folder.circle.fill"
     case emptyStar = "star"
     case fillStar = "star.fill"
+    case xmark = "xmark"
 }

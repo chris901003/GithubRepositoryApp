@@ -15,6 +15,7 @@ struct AllRepositoryView: View {
     @State private var isAdding: Bool = false
     
     @State private var listSelection = Set<String>()
+    @State private var repoDetailSelecte: RepositoryModel? = .init(mock: true)
     
     // Private Variable
     private var vm: AllRepositoryViewModel
@@ -41,6 +42,7 @@ struct AllRepositoryView: View {
                 List(selection: $listSelection) {
                     ForEach(sharedInfo.allRepo) { repoInfo in
                         repoInfoView(repoInfo: repoInfo)
+                            .onTapGesture { repoDetailSelecte = repoInfo }
                     }
                 }
                 .environment(\.editMode, .constant(editMode == .active ? .active : .inactive))
@@ -57,6 +59,9 @@ struct AllRepositoryView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     titleView
                 }
+            }
+            .sheet(isPresented: .constant(isShowRepoDetailSheet)) {
+                RepositoryDetailView(repoInfo: $repoDetailSelecte)
             }
         }
     }
@@ -184,14 +189,21 @@ private extension AllRepositoryView {
 }
 
 private extension AllRepositoryView {
+    /// 更換當前模式
     func changeEditMode() {
         editMode = editModeStatus
     }
 }
 
 private extension AllRepositoryView {
+    /// 更換當前模式
     var editModeStatus: EditMode {
         editMode == .active ? .inactive : .active
+    }
+    
+    /// 是否要開啟詳細資訊表單
+    var isShowRepoDetailSheet: Bool {
+        repoDetailSelecte == nil ? false : true
     }
 }
 

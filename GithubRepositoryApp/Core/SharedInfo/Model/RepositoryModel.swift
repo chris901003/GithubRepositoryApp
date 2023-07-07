@@ -17,3 +17,9 @@ struct RepositoryModel: Identifiable {
     
     var id: String { repoLink }
 }
+
+extension RepositoryModel {
+    init(mock: Bool) {
+        self.repoLink = "chris901003/GithubRepositoryApp"
+    }
+}
