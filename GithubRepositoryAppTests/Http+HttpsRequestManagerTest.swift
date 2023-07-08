@@ -67,6 +67,18 @@ class HttpRequestManagerTest: XCTestCase {
             XCTAssertEqual(errorTransfer, HttpRequestManager.FetchDataError.statusCode)
         }
     }
+    
+    func testFetchDataWithCache() async {
+        let url = "https://api.github.com/repos/chris901003/GithubRepositoryApp".toURL()!
+        let urlRequest = URLRequest(url: url)
+        do {
+            let result = try await HttpRequestManager.shared.fetchData(urlRequest: urlRequest, dataType: RepositoryDetailModel.self, session: .repoSession)
+            print("✅ 成功獲取資料")
+            print(result)
+        } catch {
+            XCTFail("獲取資料失敗: \(error)")
+        }
+    }
 }
 
 private extension HttpRequestManagerTest {

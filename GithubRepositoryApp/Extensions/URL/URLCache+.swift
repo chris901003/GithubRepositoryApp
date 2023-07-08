@@ -12,4 +12,9 @@ extension URLCache {
         .init(memoryCapacity: 20 * 1024 * 1024,
               diskCapacity: 30 * 1024 * 1024)
     }()
+    
+    static let repoInfoCache: URLCache = {
+        .init(memoryCapacity: 20 * 1024 * 1024,
+              diskCapacity: 30 * 1024 * 1024)
+    }()
 }

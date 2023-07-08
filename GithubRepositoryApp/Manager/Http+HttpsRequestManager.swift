@@ -23,6 +23,12 @@ extension HttpRequestManager {
                                  dataType: T.Type,
                                  statusCodeRange: ClosedRange<Int> = 200...299,
                                  session: URLSession = .shared) async throws -> T {
+        if session != URLSession.shared,
+           let data = session.configuration.urlCache?.cachedResponse(for: urlRequest)?.data,
+           let result = try? JSONDecoder().decode(dataType, from: data) {
+            // 若不是使用預設的shared的session，我們就會檢查cache當中是否有我們需要的資料
+            return result
+        }
         guard let (data, response) = try? await session.data(for: urlRequest) else { throw FetchDataError.internet }
         guard let response = response as? HTTPURLResponse,
               statusCodeRange ~= response.statusCode else { throw FetchDataError.statusCode }

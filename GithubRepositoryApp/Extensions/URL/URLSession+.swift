@@ -14,6 +14,12 @@ extension URLSession {
         config.urlCache = .imageCache
         return .init(configuration: config)
     }()
+    
+    static let repoSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        config.urlCache = .repoInfoCache
+        return .init(configuration: config)
+    }()
 }
 
 extension URLSession {
