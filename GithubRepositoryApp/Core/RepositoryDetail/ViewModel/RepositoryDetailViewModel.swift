@@ -30,6 +30,7 @@ private extension RepositoryDetailViewModel {
     @MainActor
     func fetchRepoInfo() async {
         // Note: 在此中的Thread皆為Main thread在Manager中的皆不是Main thread
+        // 這部分還有大量問題，看一下要不要變成按下指定Repo後才獲取資料，不然現在疑似會瘋狂跑這裡，不知道是誰在呼叫
         let url = URL(string: repoLink)!
         let urlRequest = URLRequest(url: url)
         do {
