@@ -44,8 +44,11 @@ private extension RepositoryDetailView {
             Image(SF: .box)
                 .resizeFitColor()
                 .frame(width: 25, height: 25)
-            Text(repoDetailInfo.repoName)
-                .fontSizeWithBold(.title3)
+            Link(destination: repoDetailInfo.repoLink) {
+                Text(repoDetailInfo.repoName)
+                    .fontSizeWithBold(.title3)
+                    .foregroundColor(Color.black)
+            }
         }
         .padding(.bottom)
     }

@@ -61,6 +61,8 @@
 		059BF5E02A55C958009985EB /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5B32A546252009985EB /* Text+.swift */; };
 		059BF5E12A55C95B009985EB /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052138B52A544F84003C7616 /* View+.swift */; };
 		059BF5E22A55C95E009985EB /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052138A82A543BA8003C7616 /* Image+.swift */; };
+		05A3F3762A5956E100B60475 /* RepositoryDetailModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3752A5956E100B60475 /* RepositoryDetailModelTest.swift */; };
+		05A3F3772A59595600B60475 /* ModifyInStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5DD2A594442003A3BA4 /* ModifyInStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,7 @@
 		059BF5C52A55BEAD009985EB /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		059BF5CB2A55C1B6009985EB /* GithubRepositoryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubRepositoryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		059BF5D42A55C667009985EB /* AllRepositoryViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRepositoryViewModelTest.swift; sourceTree = "<group>"; };
+		05A3F3752A5956E100B60475 /* RepositoryDetailModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +423,7 @@
 				059BF5D42A55C667009985EB /* AllRepositoryViewModelTest.swift */,
 				059AF5CB2A57B775003A3BA4 /* URLSession+uiImageTest.swift */,
 				059AF5D42A58564C003A3BA4 /* Http+HttpsRequestManagerTest.swift */,
+				05A3F3752A5956E100B60475 /* RepositoryDetailModelTest.swift */,
 			);
 			path = GithubRepositoryAppTests;
 			sourceTree = "<group>";
@@ -582,7 +586,9 @@
 				059BF5E22A55C95E009985EB /* Image+.swift in Sources */,
 				059BF5DC2A55C931009985EB /* OperationOverloading.swift in Sources */,
 				059BF5D72A55C6F6009985EB /* SharedInfo.swift in Sources */,
+				05A3F3762A5956E100B60475 /* RepositoryDetailModelTest.swift in Sources */,
 				059BF5DA2A55C8D0009985EB /* String+.swift in Sources */,
+				05A3F3772A59595600B60475 /* ModifyInStruct.swift in Sources */,
 				059BF5DE2A55C94C009985EB /* Color+.swift in Sources */,
 				059AF5C02A57AB1B003A3BA4 /* URLSession+.swift in Sources */,
 				059AF5A92A5673A5003A3BA4 /* Collection+.swift in Sources */,

@@ -74,6 +74,24 @@ extension RepositoryDetailModel: Decodable {
     }
 }
 
+extension RepositoryDetailModel {
+    /// 獲取常用語言資料
+    mutating func fetchLanguageUse() async {
+        let urlRequest = URLRequest(url: self.languagesUseLink)
+        guard let result = try? await HttpRequestManager.shared.fetchData(urlRequest: urlRequest,
+                                                                          dataType: Dictionary<String,Int>.self,
+                                                                          session: .repoSession) else {
+            return
+        }
+        var language: [(String, Int)] = []
+        for (name, lines) in result {
+            language.append((name, lines))
+            if language.count > 5 { break }
+        }
+        self.languagesUse = language
+    }
+}
+
 // MARK: Compute variable
 extension RepositoryDetailModel {
     // 倉庫名稱

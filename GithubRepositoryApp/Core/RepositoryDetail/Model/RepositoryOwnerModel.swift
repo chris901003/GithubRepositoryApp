@@ -12,7 +12,7 @@ struct RepositoryOwnerModel {
     var name: String
     // Ex: "avatar_url": "https://avatars.githubusercontent.com/u/75870128?v=4"
     var photoLink: URL
-    // Ex: "url": "https://api.github.com/users/chris901003"
+    // Ex: "html_url": "https://github.com/chris901003"
     var githubLink: URL
     
     init(name: String, photoLink: URL, githubLink: URL) {
@@ -26,7 +26,7 @@ extension RepositoryOwnerModel: Decodable {
     enum CodingKeys: String, CodingKey {
         case name = "login"
         case photoLink = "avatar_url"
-        case githubLink = "url"
+        case githubLink = "html_url"
     }
     
     init(from decoder: Decoder) throws {

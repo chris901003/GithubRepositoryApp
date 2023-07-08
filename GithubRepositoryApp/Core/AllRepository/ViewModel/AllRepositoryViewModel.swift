@@ -73,7 +73,8 @@ extension AllRepositoryViewModel {
         }
         let urlResponse = URLRequest(url: url)
         do {
-            let repoInfo = try await HttpRequestManager.shared.fetchData(urlRequest: urlResponse, dataType: RepositoryDetailModel.self, session: .repoSession)
+            var repoInfo = try await HttpRequestManager.shared.fetchData(urlRequest: urlResponse, dataType: RepositoryDetailModel.self, session: .repoSession)
+            await repoInfo.fetchLanguageUse()
             return repoInfo
         } catch {
             guard let errorTransfer = error as? HttpRequestManager.FetchDataError else {
