@@ -13,8 +13,9 @@ struct RepositoryDetailView: View {
     @ObservedObject var vm: RepositoryDetailViewModel
     
     init(sharedInfo: SharedInfo, repoInfo: Binding<RepositoryModel?>) {
+        print(repoInfo.wrappedValue?.repoLink ?? "None")
         self._repoInfo = .init(projectedValue: repoInfo)
-        self._vm = .init(initialValue: .init(sharedInfo: sharedInfo, repoName: repoInfo.wrappedValue!.repoLink))
+        self._vm = .init(initialValue: .init(sharedInfo: sharedInfo, repoName: "asdfasdfasdf"))
     }
     
     var body: some View {

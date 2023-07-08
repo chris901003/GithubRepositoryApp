@@ -20,6 +20,7 @@ final class SharedInfo: ObservableObject {
 extension SharedInfo {
     static func mockDataInit(repos: Int = 10) -> SharedInfo {
         let result: SharedInfo = SharedInfo()
+        result.allRepo.append(.init(repoLink: "chris901003/GithubRepositoryApp"))
         for _ in 0..<repos {
             result.allRepo.append(.init(repoLink: String.randomString(length: 10)! + "/" + String.randomString(length: 10)!))
         }

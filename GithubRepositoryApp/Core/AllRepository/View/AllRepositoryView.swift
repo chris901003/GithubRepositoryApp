@@ -14,7 +14,7 @@ struct AllRepositoryView: View {
     @State private var newRepoName: String = ""
     @State private var isAdding: Bool = false
     @State private var listSelection = Set<String>()
-    @State private var repoDetailSelecte: RepositoryModel? = .mock()
+    @State private var repoDetailSelecte: RepositoryModel? = nil
     @State private var sheetViewSize: CGFloat = SheetSizePreference.defaultValue
     
     // Private Variable
@@ -60,7 +60,7 @@ struct AllRepositoryView: View {
                     titleView
                 }
             }
-            .sheet(isPresented: .constant(isShowRepoDetailSheet)) {
+            .sheet(isPresented: isShowRepoDetailSheet) {
                 RepositoryDetailView(sharedInfo: sharedInfo, repoInfo: $repoDetailSelecte)
                     .onPreferenceChange(SheetSizePreference.self) { sheetViewSize = $0 }
                     .presentationDetents([.height(sheetViewSize)])
@@ -124,6 +124,7 @@ private extension AllRepositoryView {
         HStack {
             TextField("Ex: chris901003/SwiftLearning", text: $newRepoName)
                 .font(.headline)
+                .autocorrectionDisabled(true)
                 .padding(8)
                 .roundRectangleBackground(cornerRadius: 5, color: .secondary, linewidth: 2)
                 .padding(.horizontal)
@@ -214,8 +215,15 @@ private extension AllRepositoryView {
     }
     
     /// 是否要開啟詳細資訊表單
-    var isShowRepoDetailSheet: Bool {
-        repoDetailSelecte == nil ? false : true
+    var isShowRepoDetailSheet: Binding<Bool> {
+        get {
+            .init {
+                $repoDetailSelecte.wrappedValue == nil ? false : true
+            } set: { newValue in
+                if !newValue { $repoDetailSelecte.wrappedValue = nil }
+            }
+        }
+        set { }
     }
 }
 
