@@ -9,13 +9,12 @@ import SwiftUI
 
 struct RepositoryDetailView: View {
     
-    @Binding var repoInfo: RepositoryModel?
-    @ObservedObject var vm: RepositoryDetailViewModel
+    @Binding var isShowRepoDetail: Bool
+    let repoDetailInfo: RepositoryDetailModel
     
-    init(sharedInfo: SharedInfo, repoInfo: Binding<RepositoryModel?>) {
-        print(repoInfo.wrappedValue?.repoLink ?? "None")
-        self._repoInfo = .init(projectedValue: repoInfo)
-        self._vm = .init(initialValue: .init(sharedInfo: sharedInfo, repoName: "asdfasdfasdf"))
+    init(isShowRepoDetail: Binding<Bool>, repoDetailInfo: RepositoryDetailModel?) {
+        self._isShowRepoDetail = .init(projectedValue: isShowRepoDetail)
+        self.repoDetailInfo = repoDetailInfo ?? .mock()
     }
     
     var body: some View {
@@ -45,7 +44,7 @@ private extension RepositoryDetailView {
             Image(SF: .box)
                 .resizeFitColor()
                 .frame(width: 25, height: 25)
-            Text(vm.repoInfo.repoName)
+            Text(repoDetailInfo.repoName)
                 .fontSizeWithBold(.title3)
         }
         .padding(.bottom)
@@ -53,7 +52,7 @@ private extension RepositoryDetailView {
     
     var repoInfoView: some View {
         HStack {
-            Text("\(vm.repoInfo.lastUpdatePassTime)")
+            Text("\(repoDetailInfo.lastUpdatePassTime)")
                 .font(.system(size: 75))
                 .frame(minWidth: 40)
                 .overlay(
@@ -65,13 +64,13 @@ private extension RepositoryDetailView {
                 )
                 .padding(.trailing, 55)
             Grid(verticalSpacing: 4) {
-                someInfoView(image: .fillStar, title: "Stars", vm.repoInfo.stars)
-                someInfoView(image: .fork, title: "Forks", vm.repoInfo.forks)
-                someInfoView(image: .exclamationmark, title: "Issues", vm.repoInfo.issues)
+                someInfoView(image: .fillStar, title: "Stars", repoDetailInfo.stars)
+                someInfoView(image: .fork, title: "Forks", repoDetailInfo.forks)
+                someInfoView(image: .exclamationmark, title: "Issues", repoDetailInfo.issues)
             }
             .foregroundColor(Color.secondary)
         }
-        .foregroundColor(vm.repoInfo.updatePassTimeColor)
+        .foregroundColor(repoDetailInfo.updatePassTimeColor)
     }
     
     var repoLanguageView: some View {
@@ -84,7 +83,7 @@ private extension RepositoryDetailView {
                     .fontSizeWithBold(.title3)
             }
             Grid {
-                ForEach(vm.repoInfo.languagesUse, id: \.name) { languageInfo in
+                ForEach(repoDetailInfo.languagesUse, id: \.name) { languageInfo in
                     GridRow {
                         Text("\(languageInfo.name): ").gridColumnAlignment(.leading)
                         Text("\(languageInfo.lines)").gridColumnAlignment(.trailing)
@@ -98,18 +97,18 @@ private extension RepositoryDetailView {
     
     var repoOwnerView: some View {
         HStack {
-            CacheAsyncImageView(url: vm.repoInfo.owner.photoLink)
+            CacheAsyncImageView(url: repoDetailInfo.owner.photoLink)
                 .frame(width: 60, height: 60)
                 .clipShape(Circle())
                 .padding(.trailing, 8)
             VStack(alignment: .leading, spacing: 4) {
-                Text(vm.repoInfo.owner.name)
+                Text(repoDetailInfo.owner.name)
                     .fontSizeWithBold(.title3)
                 HStack {
                     Image("github-logo")
                         .resizeFitColor()
                         .frame(width: 20, height: 20)
-                    Link("Github", destination: vm.repoInfo.owner.githubLink)
+                    Link("Github", destination: repoDetailInfo.owner.githubLink)
                 }
             }
         }
@@ -140,7 +139,7 @@ private extension RepositoryDetailView {
         HStack {
             Spacer()
             Button{
-              repoInfo = nil
+              isShowRepoDetail = false
             } label: {
                 Image(SF: .xmark)
                     .resizeFitColor()

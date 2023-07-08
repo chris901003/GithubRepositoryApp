@@ -14,11 +14,12 @@ struct AllRepositoryView: View {
     @State private var newRepoName: String = ""
     @State private var isAdding: Bool = false
     @State private var listSelection = Set<String>()
-    @State private var repoDetailSelecte: RepositoryModel? = nil
     @State private var sheetViewSize: CGFloat = SheetSizePreference.defaultValue
+    @State private var isShowDetailSheet: Bool = false
     
     // Private Variable
     private var vm: AllRepositoryViewModel
+    @ModifyInStruct private var selectedRepositoryInfo: RepositoryDetailModel? = nil
     
     init(sharedInfo: SharedInfo) {
         self._sharedInfo = .init(wrappedValue: sharedInfo)
@@ -42,7 +43,9 @@ struct AllRepositoryView: View {
                 List(selection: $listSelection) {
                     ForEach(sharedInfo.allRepo) { repoInfo in
                         repoInfoView(repoInfo: repoInfo)
-                            .onTapGesture { repoDetailSelecte = repoInfo }
+                            .onTapGesture {
+                                selectRepoToShowDetail(repoInfo: repoInfo)
+                            }
                     }
                 }
                 .environment(\.editMode, .constant(editMode == .active ? .active : .inactive))
@@ -60,8 +63,8 @@ struct AllRepositoryView: View {
                     titleView
                 }
             }
-            .sheet(isPresented: isShowRepoDetailSheet) {
-                RepositoryDetailView(sharedInfo: sharedInfo, repoInfo: $repoDetailSelecte)
+            .sheet(isPresented: $isShowDetailSheet) {
+                RepositoryDetailView(isShowRepoDetail: $isShowDetailSheet, repoDetailInfo: selectedRepositoryInfo)
                     .onPreferenceChange(SheetSizePreference.self) { sheetViewSize = $0 }
                     .presentationDetents([.height(sheetViewSize)])
             }
@@ -206,24 +209,25 @@ private extension AllRepositoryView {
     func changeEditMode() {
         editMode = editModeStatus
     }
+    
+    /// 獲取選中倉庫詳細資料
+    func selectRepoToShowDetail(repoInfo: RepositoryModel) {
+        Task { @MainActor in
+            do {
+                self.selectedRepositoryInfo = try await vm.fetchSelectedRepoInfo(repoLink: repoInfo.repoLink)
+                isShowDetailSheet = true
+            } catch let error as RawRepresentable & LocalizedError {
+                sharedInfo.alertMessage = error
+                sharedInfo.alertType = .error
+            }
+        }
+    }
 }
 
 private extension AllRepositoryView {
     /// 更換當前模式
     var editModeStatus: EditMode {
         editMode == .active ? .inactive : .active
-    }
-    
-    /// 是否要開啟詳細資訊表單
-    var isShowRepoDetailSheet: Binding<Bool> {
-        get {
-            .init {
-                $repoDetailSelecte.wrappedValue == nil ? false : true
-            } set: { newValue in
-                if !newValue { $repoDetailSelecte.wrappedValue = nil }
-            }
-        }
-        set { }
     }
 }
 

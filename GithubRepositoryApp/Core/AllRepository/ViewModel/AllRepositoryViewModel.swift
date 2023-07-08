@@ -18,6 +18,7 @@ final class AllRepositoryViewModel {
     }
 }
 
+// MARK: 與SharedInfo操作相關
 extension AllRepositoryViewModel {
     
     /// 添加新的倉庫連結
@@ -64,6 +65,30 @@ extension AllRepositoryViewModel {
     }
 }
 
+extension AllRepositoryViewModel {
+    /// 透過網路獲取倉庫資料
+    func fetchSelectedRepoInfo(repoLink: String) async throws -> RepositoryDetailModel {
+        guard let url = "https://api.github.com/repos/\(repoLink)".toURL() else {
+            throw FetchRepositoryError.urlError
+        }
+        let urlResponse = URLRequest(url: url)
+        do {
+            let repoInfo = try await HttpRequestManager.shared.fetchData(urlRequest: urlResponse, dataType: RepositoryDetailModel.self, session: .repoSession)
+            return repoInfo
+        } catch {
+            guard let errorTransfer = error as? HttpRequestManager.FetchDataError else {
+                throw FetchRepositoryError.errorTransferError
+            }
+            switch errorTransfer {
+                case .internet, .decode:
+                    throw error
+                case .statusCode:
+                    throw FetchRepositoryError.notFound
+            }
+        }
+    }
+}
+
 private extension AllRepositoryViewModel {
     // 檢查倉庫連結是否正確
     func checkRepoLinkValid(repoLink: String) -> Bool {
@@ -79,5 +104,11 @@ extension AllRepositoryViewModel {
         case duplicateRepo = "已存在"
         case addSuccess = "成功添加"
         case inValidRepoLink = "倉庫名稱不合法"
+    }
+    
+    enum FetchRepositoryError: String, LocalizedError {
+        case urlError = "網址錯誤"
+        case errorTransferError = "無法顯示錯誤資訊"
+        case notFound = "查無資料或是稍後再試"
     }
 }
