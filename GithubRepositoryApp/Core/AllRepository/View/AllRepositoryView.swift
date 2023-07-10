@@ -14,12 +14,10 @@ struct AllRepositoryView: View {
     @State private var newRepoName: String = ""
     @State private var isAdding: Bool = false
     @State private var listSelection = Set<String>()
-    @State private var sheetViewSize: CGFloat = SheetSizePreference.defaultValue
-    @State private var isShowDetailSheet: Bool = false
+    @State private var selectedRepo: Sheet?
     
     // Private Variable
     private var vm: AllRepositoryViewModel
-    @ModifyInStruct private var selectedRepositoryInfo: RepositoryDetailModel? = nil
     
     init(sharedInfo: SharedInfo) {
         self._sharedInfo = .init(wrappedValue: sharedInfo)
@@ -40,16 +38,11 @@ struct AllRepositoryView: View {
                     .background(.ultraThinMaterial)
                     .cornerRadius(8)
                 }
-                List(selection: $listSelection) {
-                    ForEach(sharedInfo.allRepo) { repoInfo in
-                        repoInfoView(repoInfo: repoInfo)
-                            .onTapGesture {
-                                selectRepoToShowDetail(repoInfo: repoInfo)
-                            }
-                    }
+                List($sharedInfo.allRepo, editActions: .all, selection: $listSelection) { $repoInfo in
+                    repoInfoView(repoInfo: repoInfo)
                 }
                 .environment(\.editMode, .constant(editMode == .active ? .active : .inactive))
-                .animation(Animation.spring(), value: editMode)
+                .animation(.spring(), value: editMode)
                 .listStyle(.plain)
                 
                 VStack {
@@ -63,21 +56,27 @@ struct AllRepositoryView: View {
                     titleView
                 }
             }
-            .sheet(isPresented: $isShowDetailSheet) {
-                RepositoryDetailView(isShowRepoDetail: $isShowDetailSheet, repoDetailInfo: selectedRepositoryInfo)
-                    .onPreferenceChange(SheetSizePreference.self) { sheetViewSize = $0 }
-                    .presentationDetents([.height(sheetViewSize)])
-            }
+            .sheet(item: $selectedRepo) { $0 }
         }
     }
 }
 
 extension AllRepositoryView {
-    struct SheetSizePreference: PreferenceKey {
-        static var defaultValue: CGFloat = 300
+    enum Sheet: View, Identifiable {
+        case repoDetail(RepositoryDetailModel)
         
-        static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-            value = nextValue()
+        var id: String {
+            switch self {
+                case .repoDetail(let detailRepoInfo):
+                    return detailRepoInfo.fullName
+            }
+        }
+        
+        var body: some View {
+            switch self {
+                case .repoDetail(let detailRepoInfo):
+                    RepositoryDetailView(repoDetailInfo: detailRepoInfo)
+            }
         }
     }
 }
@@ -92,6 +91,8 @@ private extension AllRepositoryView {
                         .frame(width: 20, height: 20)
                     Text("使用者: \(repoInfo.userName ?? "匿名")")
                         .font(.headline)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
                 }
                 HStack {
                     Image(SF: .folder)
@@ -99,6 +100,8 @@ private extension AllRepositoryView {
                         .frame(width: 20, height: 20)
                     Text("倉庫: \(repoInfo.repoName ?? "倉庫")")
                         .font(.headline)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
                 }
             }
             Spacer()
@@ -108,6 +111,10 @@ private extension AllRepositoryView {
                 .onTapGesture {
                     Task { await vm.changeFavoriateState(repoInfo: repoInfo) }
                 }
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            selectRepoToShowDetail(repoInfo: repoInfo)
         }
     }
 }
@@ -214,9 +221,10 @@ private extension AllRepositoryView {
     func selectRepoToShowDetail(repoInfo: RepositoryModel) {
         Task { @MainActor in
             do {
-                self.selectedRepositoryInfo = try await vm.fetchSelectedRepoInfo(repoLink: repoInfo.repoLink)
-                isShowDetailSheet = true
+                let result = try await vm.fetchSelectedRepoInfo(repoLink: repoInfo.repoLink)
+                self.selectedRepo = .repoDetail(result)
             } catch let error as RawRepresentable & LocalizedError {
+                self.selectedRepo = nil
                 sharedInfo.alertMessage = error
                 sharedInfo.alertType = .error
             }

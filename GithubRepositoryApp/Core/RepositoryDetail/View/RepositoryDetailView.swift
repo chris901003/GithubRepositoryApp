@@ -9,12 +9,12 @@ import SwiftUI
 
 struct RepositoryDetailView: View {
     
-    @Binding var isShowRepoDetail: Bool
+    @Environment(\.dismiss) var dismiss
+    @State private var sheetViewSize: CGFloat = SheetSizePreference.defaultValue
     let repoDetailInfo: RepositoryDetailModel
     
-    init(isShowRepoDetail: Binding<Bool>, repoDetailInfo: RepositoryDetailModel?) {
-        self._isShowRepoDetail = .init(projectedValue: isShowRepoDetail)
-        self.repoDetailInfo = repoDetailInfo ?? .mock()
+    init(repoDetailInfo: RepositoryDetailModel) {
+        self.repoDetailInfo = repoDetailInfo
     }
     
     var body: some View {
@@ -32,8 +32,22 @@ struct RepositoryDetailView: View {
         .overlay {
             GeometryReader { proxy in
                 Color.clear
-                    .preference(key: AllRepositoryView.SheetSizePreference.self, value: proxy.size.height)
+                    .preference(key: SheetSizePreference.self, value: proxy.size.height)
             }
+        }
+        .onPreferenceChange(SheetSizePreference.self) {
+            sheetViewSize = $0
+        }
+        .presentationDetents([.height(sheetViewSize)])
+    }
+}
+
+extension RepositoryDetailView {
+    struct SheetSizePreference: PreferenceKey {
+        static var defaultValue: CGFloat = 300
+        
+        static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+            value = nextValue()
         }
     }
 }
@@ -142,7 +156,7 @@ private extension RepositoryDetailView {
         HStack {
             Spacer()
             Button{
-              isShowRepoDetail = false
+              dismiss()
             } label: {
                 Image(SF: .xmark)
                     .resizeFitColor()
