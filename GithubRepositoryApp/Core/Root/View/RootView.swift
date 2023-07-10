@@ -10,20 +10,23 @@ import SwiftUI
 struct RootView: View {
     
     @EnvironmentObject var sharedInfo: SharedInfo
+    @State var tabSelect: TabSelection = .all
     
     var body: some View {
         ZStack {
-            TabView {
+            TabView(selection: $tabSelect) {
                 AllRepositoryView(sharedInfo: sharedInfo)
                     .tabItem {
                         Image(SF: .box)
                         Text("倉庫")
                     }
-                Text("Favorite")
-                    .tabItem {
-                        Image(SF: .fillStar)
-                        Text("喜好")
-                    }
+                    .tag(TabSelection.all)
+//                FavoriteRepositoryView(sharedInfo: sharedInfo)
+//                    .tabItem {
+//                        Image(SF: .fillStar)
+//                        Text("喜好")
+//                    }
+//                    .tag(TabSelection.favorite)
             }
             
             VStack {
@@ -35,6 +38,12 @@ struct RootView: View {
             }
             .animation(.easeOut(duration: 0.3), value: sharedInfo.alertType)
         }
+    }
+}
+
+extension RootView {
+    enum TabSelection: Int {
+        case all, favorite
     }
 }
 

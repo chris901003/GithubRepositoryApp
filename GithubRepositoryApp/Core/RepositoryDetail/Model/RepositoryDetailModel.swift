@@ -69,8 +69,8 @@ extension RepositoryDetailModel: Decodable {
         self.stars = try container.decode(Int.self, forKey: .stars)
         self.forks = try container.decode(Int.self, forKey: .forks)
         self.issues = try container.decode(Int.self, forKey: .issues)
-        // FIXME: 最後需要從[languagesUseLink]抓取資料
-        self.languagesUse = [("Swift", 25337), ("C++", 1201)]
+        // 在獲取完資料後會呼叫fetchLanguageUse函數抓取資料
+        self.languagesUse = []
     }
 }
 

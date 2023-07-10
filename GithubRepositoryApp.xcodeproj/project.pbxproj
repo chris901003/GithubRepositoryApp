@@ -63,6 +63,9 @@
 		059BF5E22A55C95E009985EB /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052138A82A543BA8003C7616 /* Image+.swift */; };
 		05A3F3762A5956E100B60475 /* RepositoryDetailModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3752A5956E100B60475 /* RepositoryDetailModelTest.swift */; };
 		05A3F3772A59595600B60475 /* ModifyInStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5DD2A594442003A3BA4 /* ModifyInStruct.swift */; };
+		05A3F3822A5BEFB600B60475 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3812A5BEFB600B60475 /* UserDefaultManager.swift */; };
+		05A3F3852A5BF2E900B60475 /* UserDefaultManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3842A5BF2E900B60475 /* UserDefaultManagerTest.swift */; };
+		05A3F3862A5BF46200B60475 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3812A5BEFB600B60475 /* UserDefaultManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,9 @@
 		059BF5CB2A55C1B6009985EB /* GithubRepositoryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubRepositoryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		059BF5D42A55C667009985EB /* AllRepositoryViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRepositoryViewModelTest.swift; sourceTree = "<group>"; };
 		05A3F3752A5956E100B60475 /* RepositoryDetailModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailModelTest.swift; sourceTree = "<group>"; };
+		05A3F3812A5BEFB600B60475 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		05A3F3832A5BF00500B60475 /* GithubRepositoryApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubRepositoryApp.entitlements; sourceTree = "<group>"; };
+		05A3F3842A5BF2E900B60475 /* UserDefaultManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManagerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,7 @@
 		0521388F2A5435B8003C7616 /* GithubRepositoryApp */ = {
 			isa = PBXGroup;
 			children = (
+				05A3F3832A5BF00500B60475 /* GithubRepositoryApp.entitlements */,
 				052138B72A54506A003C7616 /* Info.plist */,
 				052138A32A543998003C7616 /* Extensions */,
 				052138A42A543A02003C7616 /* SFSymbols */,
@@ -349,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				059AF5D12A584BE5003A3BA4 /* Http+HttpsRequestManager.swift */,
+				05A3F3812A5BEFB600B60475 /* UserDefaultManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -424,6 +432,7 @@
 				059AF5CB2A57B775003A3BA4 /* URLSession+uiImageTest.swift */,
 				059AF5D42A58564C003A3BA4 /* Http+HttpsRequestManagerTest.swift */,
 				05A3F3752A5956E100B60475 /* RepositoryDetailModelTest.swift */,
+				05A3F3842A5BF2E900B60475 /* UserDefaultManagerTest.swift */,
 			);
 			path = GithubRepositoryAppTests;
 			sourceTree = "<group>";
@@ -560,6 +569,7 @@
 				059AF5AD2A56AE7F003A3BA4 /* RepositoryDetailView.swift in Sources */,
 				059AF5C62A57ABCE003A3BA4 /* CacheAsyncImageView.swift in Sources */,
 				059AF5B82A57066C003A3BA4 /* RepositoryOwnerModel.swift in Sources */,
+				05A3F3822A5BEFB600B60475 /* UserDefaultManager.swift in Sources */,
 				059BF5BA2A55346E009985EB /* String+.swift in Sources */,
 				052138A62A543A1E003C7616 /* SFSymbols.swift in Sources */,
 			);
@@ -593,9 +603,11 @@
 				059AF5C02A57AB1B003A3BA4 /* URLSession+.swift in Sources */,
 				059AF5A92A5673A5003A3BA4 /* Collection+.swift in Sources */,
 				059BF5DB2A55C8E4009985EB /* Sequence+.swift in Sources */,
+				05A3F3862A5BF46200B60475 /* UserDefaultManager.swift in Sources */,
 				059AF5C32A57AB29003A3BA4 /* URLCache+.swift in Sources */,
 				059BF5D62A55C6E8009985EB /* AllRepositoryViewModel.swift in Sources */,
 				059BF5DF2A55C955009985EB /* Shape+.swift in Sources */,
+				05A3F3852A5BF2E900B60475 /* UserDefaultManagerTest.swift in Sources */,
 				059AF5B92A57066C003A3BA4 /* RepositoryOwnerModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -730,6 +742,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GithubRepositoryApp/GithubRepositoryApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubRepositoryApp/Preview Content\"";
@@ -760,6 +773,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GithubRepositoryApp/GithubRepositoryApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubRepositoryApp/Preview Content\"";
