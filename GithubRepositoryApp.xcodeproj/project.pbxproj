@@ -102,6 +102,9 @@
 		05A3F3C12A5C378700B60475 /* Placeholder+SnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3C02A5C378700B60475 /* Placeholder+SnapshotView.swift */; };
 		05A3F3C32A5C409500B60475 /* NoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3C22A5C409500B60475 /* NoInternetView.swift */; };
 		05A3F3C52A5C454000B60475 /* RepoInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3C42A5C454000B60475 /* RepoInfoView.swift */; };
+		05A3F3C72A5C530300B60475 /* SingleRepoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3C62A5C530300B60475 /* SingleRepoProvider.swift */; };
+		05A3F3C92A5C533700B60475 /* SingleRepoWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3C82A5C533700B60475 /* SingleRepoWidgetView.swift */; };
+		05A3F3CB2A5C53E100B60475 /* SingleRepoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3C62A5C530300B60475 /* SingleRepoProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +188,8 @@
 		05A3F3C02A5C378700B60475 /* Placeholder+SnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Placeholder+SnapshotView.swift"; sourceTree = "<group>"; };
 		05A3F3C22A5C409500B60475 /* NoInternetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetView.swift; sourceTree = "<group>"; };
 		05A3F3C42A5C454000B60475 /* RepoInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInfoView.swift; sourceTree = "<group>"; };
+		05A3F3C62A5C530300B60475 /* SingleRepoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRepoProvider.swift; sourceTree = "<group>"; };
+		05A3F3C82A5C533700B60475 /* SingleRepoWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRepoWidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -549,20 +554,30 @@
 		05A3F3A12A5C2E2C00B60475 /* SingleRepoWidget */ = {
 			isa = PBXGroup;
 			children = (
-				05A3F3A22A5C2E3700B60475 /* View */,
-				05A3F3A32A5C2E4800B60475 /* SingleRepoWidget.swift */,
+				05A3F3CA2A5C53D300B60475 /* MainWidget */,
+				05A3F3A22A5C2E3700B60475 /* Subview */,
 			);
 			path = SingleRepoWidget;
 			sourceTree = "<group>";
 		};
-		05A3F3A22A5C2E3700B60475 /* View */ = {
+		05A3F3A22A5C2E3700B60475 /* Subview */ = {
 			isa = PBXGroup;
 			children = (
 				05A3F3C02A5C378700B60475 /* Placeholder+SnapshotView.swift */,
 				05A3F3C22A5C409500B60475 /* NoInternetView.swift */,
 				05A3F3C42A5C454000B60475 /* RepoInfoView.swift */,
 			);
-			path = View;
+			path = Subview;
+			sourceTree = "<group>";
+		};
+		05A3F3CA2A5C53D300B60475 /* MainWidget */ = {
+			isa = PBXGroup;
+			children = (
+				05A3F3A32A5C2E4800B60475 /* SingleRepoWidget.swift */,
+				05A3F3C62A5C530300B60475 /* SingleRepoProvider.swift */,
+				05A3F3C82A5C533700B60475 /* SingleRepoWidgetView.swift */,
+			);
+			path = MainWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -752,6 +767,7 @@
 				059BF5DA2A55C8D0009985EB /* String+.swift in Sources */,
 				05A3F3772A59595600B60475 /* ModifyInStruct.swift in Sources */,
 				059BF5DE2A55C94C009985EB /* Color+.swift in Sources */,
+				05A3F3CB2A5C53E100B60475 /* SingleRepoProvider.swift in Sources */,
 				059AF5C02A57AB1B003A3BA4 /* URLSession+.swift in Sources */,
 				059AF5A92A5673A5003A3BA4 /* Collection+.swift in Sources */,
 				059BF5DB2A55C8E4009985EB /* Sequence+.swift in Sources */,
@@ -780,6 +796,7 @@
 				05A3F3B82A5C35B000B60475 /* CacheAsyncImageView.swift in Sources */,
 				05A3F3C12A5C378700B60475 /* Placeholder+SnapshotView.swift in Sources */,
 				05A3F3AC2A5C358600B60475 /* Collection+.swift in Sources */,
+				05A3F3C92A5C533700B60475 /* SingleRepoWidgetView.swift in Sources */,
 				05A3F3B22A5C359C00B60475 /* Image+.swift in Sources */,
 				05A3F3A82A5C357A00B60475 /* String+.swift in Sources */,
 				05A3F3C32A5C409500B60475 /* NoInternetView.swift in Sources */,
@@ -790,6 +807,7 @@
 				05A3F3B42A5C35A500B60475 /* ModifyInStruct.swift in Sources */,
 				05A3F3AB2A5C358300B60475 /* URLCache+.swift in Sources */,
 				05A3F3B72A5C35AD00B60475 /* UserDefaultManager.swift in Sources */,
+				05A3F3C72A5C530300B60475 /* SingleRepoProvider.swift in Sources */,
 				05A3F3A92A5C357D00B60475 /* Date+.swift in Sources */,
 				05A3F3B32A5C35A100B60475 /* SFSymbols.swift in Sources */,
 				05A3F3B92A5C35B500B60475 /* GitRepoAlertView.swift in Sources */,

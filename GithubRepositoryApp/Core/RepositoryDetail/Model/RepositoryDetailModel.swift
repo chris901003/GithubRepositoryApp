@@ -88,6 +88,7 @@ extension RepositoryDetailModel {
             language.append((name, lines))
             if language.count > 5 { break }
         }
+        language = language.sorted{ $0.1 > $1.1 }
         self.languagesUse = language
     }
 }
