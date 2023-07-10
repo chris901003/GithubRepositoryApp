@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RepositoryModel: Identifiable {
+struct RepositoryModel: Identifiable, Codable {
     var repoLink: String
     var isFavoriate: Bool = false
     

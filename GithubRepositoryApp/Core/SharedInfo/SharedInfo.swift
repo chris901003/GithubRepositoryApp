@@ -16,6 +16,19 @@ final class SharedInfo: ObservableObject {
     @Published var alertMessage: (any RawRepresentable & LocalizedError)? = nil
 }
 
+// MARK: 公開的函數
+extension SharedInfo {
+    /// 獲取以保存的倉庫資料
+    func fetchAllRepo() throws {
+        self.allRepo = try UserDefaultManager.shared.fetchDataCodable(key: .repoList)
+    }
+    
+    /// 將當前的倉庫資料保存到UserDefault當中
+    func saveAllRepo() throws {
+        try UserDefaultManager.shared.updateDataCodable(key: .repoList, data: allRepo)
+    }
+}
+
 // MARK: Mock Init
 extension SharedInfo {
     static func mockDataInit(repos: Int = 10) -> SharedInfo {

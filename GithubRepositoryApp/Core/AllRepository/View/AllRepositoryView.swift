@@ -58,6 +58,9 @@ struct AllRepositoryView: View {
             }
             .sheet(item: $selectedRepo) { $0 }
         }
+        .onAppear {
+            vm.fetchAllRepo()
+        }
     }
 }
 

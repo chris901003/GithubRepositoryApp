@@ -6,20 +6,45 @@
 //
 
 import Foundation
+import Combine
 
 final class AllRepositoryViewModel {
     
     // Private Variable
     private let sharedInfo: SharedInfo
+    private var subscribeAllRepoCancellable: AnyCancellable? = nil
     
     // Init Function
     init(sharedInfo: SharedInfo) {
         self.sharedInfo = sharedInfo
+        Task { await self.subscribeAllRepo() }
     }
 }
 
 // MARK: 與SharedInfo操作相關
 extension AllRepositoryViewModel {
+    
+    /// 獲取UserDefault當中保存的倉庫名稱
+    @MainActor
+    func fetchAllRepo() {
+        do {
+            try sharedInfo.fetchAllRepo()
+        } catch {
+            sharedInfo.alertMessage = LoadOrSaveRepoError.load
+            sharedInfo.alertType = .error
+        }
+    }
+    
+    /// 將當前倉庫保存到UserDefault當中
+    @MainActor
+    func saveAllRepo() {
+        do {
+            try sharedInfo.saveAllRepo()
+        } catch {
+            sharedInfo.alertMessage = LoadOrSaveRepoError.update
+            sharedInfo.alertType = .error
+        }
+    }
     
     /// 添加新的倉庫連結
     @MainActor
@@ -97,9 +122,23 @@ private extension AllRepositoryViewModel {
         guard seperateResult.count == 2 else { return false }
         return true
     }
+    
+    /// 訂閱allRepo的更改，若有任合更改就會保存到手機上
+    @MainActor
+    func subscribeAllRepo() {
+        subscribeAllRepoCancellable = sharedInfo.$allRepo
+            .debounce(for: 0.5, scheduler: DispatchQueue.main)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in self?.saveAllRepo() }
+    }
 }
 
 extension AllRepositoryViewModel {
+    enum LoadOrSaveRepoError: String, LocalizedError {
+        case load = "無過去資料"
+        case update = "無法更新倉庫資料"
+    }
+    
     enum ModifyRepoError: String, LocalizedError {
         case emptyRepoName = "名稱不可為空"
         case duplicateRepo = "已存在"
