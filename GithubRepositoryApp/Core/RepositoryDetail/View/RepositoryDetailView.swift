@@ -96,7 +96,7 @@ private extension RepositoryDetailView {
                 Image("coding")
                     .resizeFitColor()
                     .frame(width: 30, height: 30)
-                Text("Coding Language")
+                Text("Main Coding Language")
                     .fontSizeWithBold(.title3)
             }
             Grid {

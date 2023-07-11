@@ -42,9 +42,14 @@ private extension RepoInfoView {
     }
     
     var lastUpdateTime: some View {
-        Text("\(repoInfo.lastUpdatePassTime)")
-            .font(.system(size: 50))
-            .bold()
+        VStack(spacing: 0) {
+            Text("\(repoInfo.lastUpdatePassTime)")
+                .font(.system(size: 50))
+                .bold()
+                .padding(.bottom, -8)
+            Text("days")
+                .fontColorBold(.caption2, .white.opacity(0.8))
+        }
     }
     
     var repoImportantInfo: some View {

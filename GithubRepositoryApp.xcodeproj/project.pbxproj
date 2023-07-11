@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051096792A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 051096782A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition */; };
+		0510967A2A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 051096782A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition */; };
+		051096812A5CDF320084EF58 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051096802A5CDF320084EF58 /* Intents.framework */; };
+		051096842A5CDF320084EF58 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051096832A5CDF320084EF58 /* IntentHandler.swift */; };
+		051096882A5CDF320084EF58 /* GithubReporitoryIntents.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0510967F2A5CDF320084EF58 /* GithubReporitoryIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0510968D2A5CDF680084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 051096782A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition */; };
+		0510968E2A5CE00E0084EF58 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3812A5BEFB600B60475 /* UserDefaultManager.swift */; };
+		051096912A5CE07A0084EF58 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5BC2A554B75009985EB /* RepositoryModel.swift */; };
+		051096992A5CE9910084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 051096782A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition */; };
 		052138912A5435B8003C7616 /* GithubRepositoryAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052138902A5435B8003C7616 /* GithubRepositoryAppApp.swift */; };
 		052138952A5435B8003C7616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 052138942A5435B8003C7616 /* Assets.xcassets */; };
 		052138982A5435B8003C7616 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 052138972A5435B8003C7616 /* Preview Assets.xcassets */; };
@@ -71,7 +80,6 @@
 		05A3F3932A5C2DEC00B60475 /* GithubRepositoryWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3922A5C2DEC00B60475 /* GithubRepositoryWidgetBundle.swift */; };
 		05A3F3972A5C2DEE00B60475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05A3F3962A5C2DEE00B60475 /* Assets.xcassets */; };
 		05A3F39B2A5C2DEE00B60475 /* GithubRepositoryWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 05A3F38B2A5C2DEC00B60475 /* GithubRepositoryWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		05A3F3A42A5C2E4900B60475 /* SingleRepoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3A32A5C2E4800B60475 /* SingleRepoWidget.swift */; };
 		05A3F3A52A5C355200B60475 /* SingleRepoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3A32A5C2E4800B60475 /* SingleRepoWidget.swift */; };
 		05A3F3A62A5C356300B60475 /* RepositoryDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5B42A56FEAD003A3BA4 /* RepositoryDetailModel.swift */; };
 		05A3F3A72A5C356500B60475 /* RepositoryOwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5B72A57066C003A3BA4 /* RepositoryOwnerModel.swift */; };
@@ -104,10 +112,16 @@
 		05A3F3C52A5C454000B60475 /* RepoInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3C42A5C454000B60475 /* RepoInfoView.swift */; };
 		05A3F3C72A5C530300B60475 /* SingleRepoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3C62A5C530300B60475 /* SingleRepoProvider.swift */; };
 		05A3F3C92A5C533700B60475 /* SingleRepoWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3C82A5C533700B60475 /* SingleRepoWidgetView.swift */; };
-		05A3F3CB2A5C53E100B60475 /* SingleRepoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3C62A5C530300B60475 /* SingleRepoProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		051096862A5CDF320084EF58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 052138852A5435B8003C7616 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0510967E2A5CDF320084EF58;
+			remoteInfo = GithubReporitoryIntents;
+		};
 		059BF5CF2A55C1B6009985EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 052138852A5435B8003C7616 /* Project object */;
@@ -131,6 +145,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				051096882A5CDF320084EF58 /* GithubReporitoryIntents.appex in Embed Foundation Extensions */,
 				05A3F39B2A5C2DEE00B60475 /* GithubRepositoryWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -139,6 +154,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		051096782A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = GihubRepositoryIntents.intentdefinition; sourceTree = "<group>"; };
+		0510967F2A5CDF320084EF58 /* GithubReporitoryIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GithubReporitoryIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		051096802A5CDF320084EF58 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		051096832A5CDF320084EF58 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		051096852A5CDF320084EF58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0510968C2A5CDF3F0084EF58 /* GithubReporitoryIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubReporitoryIntents.entitlements; sourceTree = "<group>"; };
 		0521388D2A5435B8003C7616 /* GithubRepositoryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubRepositoryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		052138902A5435B8003C7616 /* GithubRepositoryAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryAppApp.swift; sourceTree = "<group>"; };
 		052138942A5435B8003C7616 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -193,6 +214,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0510967C2A5CDF320084EF58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				051096812A5CDF320084EF58 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0521388A2A5435B8003C7616 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +248,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		051096822A5CDF320084EF58 /* GithubReporitoryIntents */ = {
+			isa = PBXGroup;
+			children = (
+				0510968C2A5CDF3F0084EF58 /* GithubReporitoryIntents.entitlements */,
+				051096832A5CDF320084EF58 /* IntentHandler.swift */,
+				051096852A5CDF320084EF58 /* Info.plist */,
+			);
+			path = GithubReporitoryIntents;
+			sourceTree = "<group>";
+		};
 		052138842A5435B8003C7616 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +265,7 @@
 				0521388F2A5435B8003C7616 /* GithubRepositoryApp */,
 				059BF5CC2A55C1B6009985EB /* GithubRepositoryAppTests */,
 				05A3F3912A5C2DEC00B60475 /* GithubRepositoryWidget */,
+				051096822A5CDF320084EF58 /* GithubReporitoryIntents */,
 				05A3F38C2A5C2DEC00B60475 /* Frameworks */,
 				0521388E2A5435B8003C7616 /* Products */,
 			);
@@ -237,6 +277,7 @@
 				0521388D2A5435B8003C7616 /* GithubRepositoryApp.app */,
 				059BF5CB2A55C1B6009985EB /* GithubRepositoryAppTests.xctest */,
 				05A3F38B2A5C2DEC00B60475 /* GithubRepositoryWidgetExtension.appex */,
+				0510967F2A5CDF320084EF58 /* GithubReporitoryIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -536,6 +577,7 @@
 			children = (
 				05A3F38D2A5C2DEC00B60475 /* WidgetKit.framework */,
 				05A3F38F2A5C2DEC00B60475 /* SwiftUI.framework */,
+				051096802A5CDF320084EF58 /* Intents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -547,6 +589,7 @@
 				05A3F3922A5C2DEC00B60475 /* GithubRepositoryWidgetBundle.swift */,
 				05A3F3962A5C2DEE00B60475 /* Assets.xcassets */,
 				05A3F3982A5C2DEE00B60475 /* Info.plist */,
+				051096782A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition */,
 			);
 			path = GithubRepositoryWidget;
 			sourceTree = "<group>";
@@ -583,6 +626,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0510967E2A5CDF320084EF58 /* GithubReporitoryIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 051096892A5CDF320084EF58 /* Build configuration list for PBXNativeTarget "GithubReporitoryIntents" */;
+			buildPhases = (
+				0510967B2A5CDF320084EF58 /* Sources */,
+				0510967C2A5CDF320084EF58 /* Frameworks */,
+				0510967D2A5CDF320084EF58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GithubReporitoryIntents;
+			productName = GithubReporitoryIntents;
+			productReference = 0510967F2A5CDF320084EF58 /* GithubReporitoryIntents.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		0521388C2A5435B8003C7616 /* GithubRepositoryApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0521389B2A5435B8003C7616 /* Build configuration list for PBXNativeTarget "GithubRepositoryApp" */;
@@ -596,6 +656,7 @@
 			);
 			dependencies = (
 				05A3F39A2A5C2DEE00B60475 /* PBXTargetDependency */,
+				051096872A5CDF320084EF58 /* PBXTargetDependency */,
 			);
 			name = GithubRepositoryApp;
 			productName = GithubRepositoryApp;
@@ -647,6 +708,9 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					0510967E2A5CDF320084EF58 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					0521388C2A5435B8003C7616 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -675,11 +739,19 @@
 				0521388C2A5435B8003C7616 /* GithubRepositoryApp */,
 				059BF5CA2A55C1B6009985EB /* GithubRepositoryAppTests */,
 				05A3F38A2A5C2DEC00B60475 /* GithubRepositoryWidgetExtension */,
+				0510967E2A5CDF320084EF58 /* GithubReporitoryIntents */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0510967D2A5CDF320084EF58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0521388B2A5435B8003C7616 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -707,6 +779,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0510967B2A5CDF320084EF58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0510968E2A5CE00E0084EF58 /* UserDefaultManager.swift in Sources */,
+				051096912A5CE07A0084EF58 /* RepositoryModel.swift in Sources */,
+				0510968D2A5CDF680084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
+				051096842A5CDF320084EF58 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		052138892A5435B8003C7616 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -719,6 +802,7 @@
 				059BF5C02A5550B3009985EB /* OperationOverloading.swift in Sources */,
 				059BF5C32A5553D9009985EB /* Sequence+.swift in Sources */,
 				059AF5CF2A57E356003A3BA4 /* Date+.swift in Sources */,
+				051096792A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
 				059BF5B02A545B73009985EB /* GitRepoAlertView.swift in Sources */,
 				059AF5D22A584BE5003A3BA4 /* Http+HttpsRequestManager.swift in Sources */,
 				052138B02A543E1C003C7616 /* SharedInfo.swift in Sources */,
@@ -755,8 +839,8 @@
 				059BF5D92A55C8B6009985EB /* GitRepoAlertView.swift in Sources */,
 				059AF5C72A57ABCE003A3BA4 /* CacheAsyncImageView.swift in Sources */,
 				059AF5D52A58564C003A3BA4 /* Http+HttpsRequestManagerTest.swift in Sources */,
+				051096992A5CE9910084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
 				059AF5B62A56FEAD003A3BA4 /* RepositoryDetailModel.swift in Sources */,
-				05A3F3A42A5C2E4900B60475 /* SingleRepoWidget.swift in Sources */,
 				059AF5CC2A57B775003A3BA4 /* URLSession+uiImageTest.swift in Sources */,
 				059AF5D32A585638003A3BA4 /* Http+HttpsRequestManager.swift in Sources */,
 				059AF5D62A58570F003A3BA4 /* Date+.swift in Sources */,
@@ -767,7 +851,6 @@
 				059BF5DA2A55C8D0009985EB /* String+.swift in Sources */,
 				05A3F3772A59595600B60475 /* ModifyInStruct.swift in Sources */,
 				059BF5DE2A55C94C009985EB /* Color+.swift in Sources */,
-				05A3F3CB2A5C53E100B60475 /* SingleRepoProvider.swift in Sources */,
 				059AF5C02A57AB1B003A3BA4 /* URLSession+.swift in Sources */,
 				059AF5A92A5673A5003A3BA4 /* Collection+.swift in Sources */,
 				059BF5DB2A55C8E4009985EB /* Sequence+.swift in Sources */,
@@ -808,6 +891,7 @@
 				05A3F3AB2A5C358300B60475 /* URLCache+.swift in Sources */,
 				05A3F3B72A5C35AD00B60475 /* UserDefaultManager.swift in Sources */,
 				05A3F3C72A5C530300B60475 /* SingleRepoProvider.swift in Sources */,
+				0510967A2A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
 				05A3F3A92A5C357D00B60475 /* Date+.swift in Sources */,
 				05A3F3B32A5C35A100B60475 /* SFSymbols.swift in Sources */,
 				05A3F3B92A5C35B500B60475 /* GitRepoAlertView.swift in Sources */,
@@ -823,6 +907,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		051096872A5CDF320084EF58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0510967E2A5CDF320084EF58 /* GithubReporitoryIntents */;
+			targetProxy = 051096862A5CDF320084EF58 /* PBXContainerItemProxy */;
+		};
 		059BF5D02A55C1B6009985EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0521388C2A5435B8003C7616 /* GithubRepositoryApp */;
@@ -836,6 +925,58 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0510968A2A5CDF320084EF58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GithubReporitoryIntents/GithubReporitoryIntents.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L4D6WNQFVL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GithubReporitoryIntents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GithubReporitoryIntents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hungyen.GithubRepositoryApp.GithubReporitoryIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0510968B2A5CDF320084EF58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GithubReporitoryIntents/GithubReporitoryIntents.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L4D6WNQFVL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GithubReporitoryIntents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GithubReporitoryIntents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hungyen.GithubRepositoryApp.GithubReporitoryIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		052138992A5435B8003C7616 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1109,6 +1250,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		051096892A5CDF320084EF58 /* Build configuration list for PBXNativeTarget "GithubReporitoryIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0510968A2A5CDF320084EF58 /* Debug */,
+				0510968B2A5CDF320084EF58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		052138882A5435B8003C7616 /* Build configuration list for PBXProject "GithubRepositoryApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

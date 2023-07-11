@@ -17,7 +17,7 @@ struct SingleRepoWidget: Widget {
     let kind: String = "SingleRepoWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: SingleRepoWidgetProvider()) { entry in
+        IntentConfiguration(kind: kind, intent: SingleRepoSelectIntent.self, provider: SingleRepoWidgetProvider()) { entry in
             SingleRepoWidgetView(singleRepoView: entry.singleRepoView)
         }
         .configurationDisplayName("監看指定倉庫")

@@ -86,9 +86,9 @@ extension RepositoryDetailModel {
         var language: [(String, Int)] = []
         for (name, lines) in result {
             language.append((name, lines))
-            if language.count > 5 { break }
         }
         language = language.sorted{ $0.1 > $1.1 }
+        language = language.myPrefix(5)
         self.languagesUse = language
     }
 }

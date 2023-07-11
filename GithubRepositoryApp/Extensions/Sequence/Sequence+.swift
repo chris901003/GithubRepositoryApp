@@ -13,4 +13,12 @@ extension Sequence {
             decrease ? $0[keyPath: path] > $1[keyPath: path] : $0[keyPath: path] < $1[keyPath: path]
         }
     }
+    
+    func myPrefix(_ nums: Int) -> [Element] {
+        var cnt = 0
+        return self.filter { _ in
+            cnt += 1
+            return cnt <= nums
+        }
+    }
 }

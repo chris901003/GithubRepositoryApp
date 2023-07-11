@@ -117,7 +117,11 @@ private extension AllRepositoryView {
         }
         .contentShape(Rectangle())
         .onTapGesture {
-            selectRepoToShowDetail(repoInfo: repoInfo)
+            if editMode == .inactive {
+                selectRepoToShowDetail(repoInfo: repoInfo)
+            } else if editMode == .active {
+                listSelection.insert(repoInfo.repoLink)
+            }
         }
     }
 }
