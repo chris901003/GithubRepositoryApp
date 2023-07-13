@@ -21,4 +21,7 @@ enum SFSymbols: String {
     case fillStar = "star.fill"
     case xmark = "xmark"
     case fork = "tuningfork"
+    case personTabItem = "person.fill"
+    case paperPlane = "paperplane.fill"
+    case questionMark = "questionmark.circle"
 }

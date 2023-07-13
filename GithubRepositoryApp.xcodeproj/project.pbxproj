@@ -16,6 +16,19 @@
 		0510968E2A5CE00E0084EF58 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A3F3812A5BEFB600B60475 /* UserDefaultManager.swift */; };
 		051096912A5CE07A0084EF58 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5BC2A554B75009985EB /* RepositoryModel.swift */; };
 		051096992A5CE9910084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 051096782A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition */; };
+		0510969D2A5D46B10084EF58 /* FollowUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0510969C2A5D46B10084EF58 /* FollowUserView.swift */; };
+		0510969E2A5D46B10084EF58 /* FollowUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0510969C2A5D46B10084EF58 /* FollowUserView.swift */; };
+		051096A12A5D4C010084EF58 /* FollowUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051096A02A5D4C010084EF58 /* FollowUserViewModel.swift */; };
+		051096A22A5D4C010084EF58 /* FollowUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051096A02A5D4C010084EF58 /* FollowUserViewModel.swift */; };
+		051096A42A5D4FB40084EF58 /* UserFollowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051096A32A5D4FB40084EF58 /* UserFollowModel.swift */; };
+		051096A52A5D4FB40084EF58 /* UserFollowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051096A32A5D4FB40084EF58 /* UserFollowModel.swift */; };
+		051096A62A5D4FBE0084EF58 /* UserFollowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051096A32A5D4FB40084EF58 /* UserFollowModel.swift */; };
+		051096A72A5D78E00084EF58 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059BF5B92A55346E009985EB /* String+.swift */; };
+		051096A92A5D8BDA0084EF58 /* UserFollowModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051096A82A5D8BDA0084EF58 /* UserFollowModelTest.swift */; };
+		051096AA2A5D8BE10084EF58 /* UserFollowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051096A32A5D4FB40084EF58 /* UserFollowModel.swift */; };
+		051096AF2A5DA3240084EF58 /* FollowUserDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051096AE2A5DA3240084EF58 /* FollowUserDetailModel.swift */; };
+		051096B02A5DA3310084EF58 /* FollowUserDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051096AE2A5DA3240084EF58 /* FollowUserDetailModel.swift */; };
+		051096B22A603D180084EF58 /* FollowUserDetailModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051096B12A603D180084EF58 /* FollowUserDetailModelTest.swift */; };
 		052138912A5435B8003C7616 /* GithubRepositoryAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052138902A5435B8003C7616 /* GithubRepositoryAppApp.swift */; };
 		052138952A5435B8003C7616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 052138942A5435B8003C7616 /* Assets.xcassets */; };
 		052138982A5435B8003C7616 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 052138972A5435B8003C7616 /* Preview Assets.xcassets */; };
@@ -160,6 +173,12 @@
 		051096832A5CDF320084EF58 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		051096852A5CDF320084EF58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0510968C2A5CDF3F0084EF58 /* GithubReporitoryIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubReporitoryIntents.entitlements; sourceTree = "<group>"; };
+		0510969C2A5D46B10084EF58 /* FollowUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUserView.swift; sourceTree = "<group>"; };
+		051096A02A5D4C010084EF58 /* FollowUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUserViewModel.swift; sourceTree = "<group>"; };
+		051096A32A5D4FB40084EF58 /* UserFollowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowModel.swift; sourceTree = "<group>"; };
+		051096A82A5D8BDA0084EF58 /* UserFollowModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowModelTest.swift; sourceTree = "<group>"; };
+		051096AE2A5DA3240084EF58 /* FollowUserDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUserDetailModel.swift; sourceTree = "<group>"; };
+		051096B12A603D180084EF58 /* FollowUserDetailModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUserDetailModelTest.swift; sourceTree = "<group>"; };
 		0521388D2A5435B8003C7616 /* GithubRepositoryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubRepositoryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		052138902A5435B8003C7616 /* GithubRepositoryAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoryAppApp.swift; sourceTree = "<group>"; };
 		052138942A5435B8003C7616 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -258,14 +277,63 @@
 			path = GithubReporitoryIntents;
 			sourceTree = "<group>";
 		};
+		0510969A2A5D46700084EF58 /* FollowUser */ = {
+			isa = PBXGroup;
+			children = (
+				0510969F2A5D4BF90084EF58 /* ViewModel */,
+				0510969B2A5D46AA0084EF58 /* View */,
+			);
+			path = FollowUser;
+			sourceTree = "<group>";
+		};
+		0510969B2A5D46AA0084EF58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0510969C2A5D46B10084EF58 /* FollowUserView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0510969F2A5D4BF90084EF58 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				051096A02A5D4C010084EF58 /* FollowUserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		051096AB2A5DA2EB0084EF58 /* FollowUserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				051096AD2A5DA30E0084EF58 /* Model */,
+				051096AC2A5DA30A0084EF58 /* View */,
+			);
+			path = FollowUserDetail;
+			sourceTree = "<group>";
+		};
+		051096AC2A5DA30A0084EF58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		051096AD2A5DA30E0084EF58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				051096AE2A5DA3240084EF58 /* FollowUserDetailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		052138842A5435B8003C7616 = {
 			isa = PBXGroup;
 			children = (
 				05A3F3A02A5C2DFA00B60475 /* GithubRepositoryWidgetExtension.entitlements */,
 				0521388F2A5435B8003C7616 /* GithubRepositoryApp */,
-				059BF5CC2A55C1B6009985EB /* GithubRepositoryAppTests */,
 				05A3F3912A5C2DEC00B60475 /* GithubRepositoryWidget */,
 				051096822A5CDF320084EF58 /* GithubReporitoryIntents */,
+				059BF5CC2A55C1B6009985EB /* GithubRepositoryAppTests */,
 				05A3F38C2A5C2DEC00B60475 /* Frameworks */,
 				0521388E2A5435B8003C7616 /* Products */,
 			);
@@ -313,6 +381,8 @@
 			isa = PBXGroup;
 			children = (
 				052138B82A545A89003C7616 /* Alert */,
+				0510969A2A5D46700084EF58 /* FollowUser */,
+				051096AB2A5DA2EB0084EF58 /* FollowUserDetail */,
 				052138AA2A543C0B003C7616 /* AllRepository */,
 				059AF5AA2A56AE55003A3BA4 /* RepositoryDetail */,
 				0521389F2A5437E1003C7616 /* Root */,
@@ -524,6 +594,7 @@
 			isa = PBXGroup;
 			children = (
 				059BF5BC2A554B75009985EB /* RepositoryModel.swift */,
+				051096A32A5D4FB40084EF58 /* UserFollowModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -560,6 +631,8 @@
 				059AF5D42A58564C003A3BA4 /* Http+HttpsRequestManagerTest.swift */,
 				05A3F3752A5956E100B60475 /* RepositoryDetailModelTest.swift */,
 				05A3F3842A5BF2E900B60475 /* UserDefaultManagerTest.swift */,
+				051096A82A5D8BDA0084EF58 /* UserFollowModelTest.swift */,
+				051096B12A603D180084EF58 /* FollowUserDetailModelTest.swift */,
 			);
 			path = GithubRepositoryAppTests;
 			sourceTree = "<group>";
@@ -787,6 +860,8 @@
 				051096912A5CE07A0084EF58 /* RepositoryModel.swift in Sources */,
 				0510968D2A5CDF680084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
 				051096842A5CDF320084EF58 /* IntentHandler.swift in Sources */,
+				051096A72A5D78E00084EF58 /* String+.swift in Sources */,
+				051096A62A5D4FBE0084EF58 /* UserFollowModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,15 +880,19 @@
 				051096792A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
 				059BF5B02A545B73009985EB /* GitRepoAlertView.swift in Sources */,
 				059AF5D22A584BE5003A3BA4 /* Http+HttpsRequestManager.swift in Sources */,
+				051096A42A5D4FB40084EF58 /* UserFollowModel.swift in Sources */,
+				051096AF2A5DA3240084EF58 /* FollowUserDetailModel.swift in Sources */,
 				052138B02A543E1C003C7616 /* SharedInfo.swift in Sources */,
 				059AF5DE2A594442003A3BA4 /* ModifyInStruct.swift in Sources */,
 				059AF5BF2A57AB1B003A3BA4 /* URLSession+.swift in Sources */,
+				051096A12A5D4C010084EF58 /* FollowUserViewModel.swift in Sources */,
 				059BF5B72A546B34009985EB /* Shape+.swift in Sources */,
 				052138912A5435B8003C7616 /* GithubRepositoryAppApp.swift in Sources */,
 				052138B62A544F84003C7616 /* View+.swift in Sources */,
 				052138AD2A543C8F003C7616 /* AllRepositoryView.swift in Sources */,
 				052138B32A54455D003C7616 /* AllRepositoryViewModel.swift in Sources */,
 				059BF5B42A546252009985EB /* Text+.swift in Sources */,
+				0510969D2A5D46B10084EF58 /* FollowUserView.swift in Sources */,
 				059AF5B52A56FEAD003A3BA4 /* RepositoryDetailModel.swift in Sources */,
 				059BF5BD2A554B75009985EB /* RepositoryModel.swift in Sources */,
 				059AF5AD2A56AE7F003A3BA4 /* RepositoryDetailView.swift in Sources */,
@@ -837,21 +916,25 @@
 				059BF5E12A55C95B009985EB /* View+.swift in Sources */,
 				059AF5D72A585731003A3BA4 /* AllRepositoryView.swift in Sources */,
 				059BF5D92A55C8B6009985EB /* GitRepoAlertView.swift in Sources */,
+				051096B02A5DA3310084EF58 /* FollowUserDetailModel.swift in Sources */,
 				059AF5C72A57ABCE003A3BA4 /* CacheAsyncImageView.swift in Sources */,
 				059AF5D52A58564C003A3BA4 /* Http+HttpsRequestManagerTest.swift in Sources */,
 				051096992A5CE9910084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
 				059AF5B62A56FEAD003A3BA4 /* RepositoryDetailModel.swift in Sources */,
 				059AF5CC2A57B775003A3BA4 /* URLSession+uiImageTest.swift in Sources */,
 				059AF5D32A585638003A3BA4 /* Http+HttpsRequestManager.swift in Sources */,
+				051096AA2A5D8BE10084EF58 /* UserFollowModel.swift in Sources */,
 				059AF5D62A58570F003A3BA4 /* Date+.swift in Sources */,
 				059BF5E22A55C95E009985EB /* Image+.swift in Sources */,
 				059BF5DC2A55C931009985EB /* OperationOverloading.swift in Sources */,
 				059BF5D72A55C6F6009985EB /* SharedInfo.swift in Sources */,
+				051096B22A603D180084EF58 /* FollowUserDetailModelTest.swift in Sources */,
 				05A3F3762A5956E100B60475 /* RepositoryDetailModelTest.swift in Sources */,
 				059BF5DA2A55C8D0009985EB /* String+.swift in Sources */,
 				05A3F3772A59595600B60475 /* ModifyInStruct.swift in Sources */,
 				059BF5DE2A55C94C009985EB /* Color+.swift in Sources */,
 				059AF5C02A57AB1B003A3BA4 /* URLSession+.swift in Sources */,
+				051096A92A5D8BDA0084EF58 /* UserFollowModelTest.swift in Sources */,
 				059AF5A92A5673A5003A3BA4 /* Collection+.swift in Sources */,
 				059BF5DB2A55C8E4009985EB /* Sequence+.swift in Sources */,
 				05A3F3862A5BF46200B60475 /* UserDefaultManager.swift in Sources */,
@@ -888,11 +971,13 @@
 				05A3F3BC2A5C35C500B60475 /* RepositoryDetailView.swift in Sources */,
 				05A3F3AA2A5C358100B60475 /* URLSession+.swift in Sources */,
 				05A3F3B42A5C35A500B60475 /* ModifyInStruct.swift in Sources */,
+				051096A52A5D4FB40084EF58 /* UserFollowModel.swift in Sources */,
 				05A3F3AB2A5C358300B60475 /* URLCache+.swift in Sources */,
 				05A3F3B72A5C35AD00B60475 /* UserDefaultManager.swift in Sources */,
 				05A3F3C72A5C530300B60475 /* SingleRepoProvider.swift in Sources */,
 				0510967A2A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
 				05A3F3A92A5C357D00B60475 /* Date+.swift in Sources */,
+				051096A22A5D4C010084EF58 /* FollowUserViewModel.swift in Sources */,
 				05A3F3B32A5C35A100B60475 /* SFSymbols.swift in Sources */,
 				05A3F3B92A5C35B500B60475 /* GitRepoAlertView.swift in Sources */,
 				05A3F3BA2A5C35BB00B60475 /* AllRepositoryViewModel.swift in Sources */,
@@ -901,6 +986,7 @@
 				05A3F3A62A5C356300B60475 /* RepositoryDetailModel.swift in Sources */,
 				05A3F3BB2A5C35BE00B60475 /* AllRepositoryView.swift in Sources */,
 				05A3F3AF2A5C359300B60475 /* Shape+.swift in Sources */,
+				0510969E2A5D46B10084EF58 /* FollowUserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,7 +1033,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -973,7 +1059,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1105,10 +1191,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GithubRepositoryApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Github追蹤小工具";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1117,9 +1204,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hungyen.GithubRepositoryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1137,10 +1227,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GithubRepositoryApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Github追蹤小工具";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1149,9 +1240,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hungyen.GithubRepositoryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

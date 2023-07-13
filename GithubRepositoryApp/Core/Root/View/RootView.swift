@@ -10,7 +10,7 @@ import SwiftUI
 struct RootView: View {
     
     @EnvironmentObject var sharedInfo: SharedInfo
-    @State var tabSelect: TabSelection = .all
+    @State var tabSelect: TabSelection = .followUser
     
     var body: some View {
         ZStack {
@@ -21,12 +21,12 @@ struct RootView: View {
                         Text("倉庫")
                     }
                     .tag(TabSelection.all)
-//                FavoriteRepositoryView(sharedInfo: sharedInfo)
-//                    .tabItem {
-//                        Image(SF: .fillStar)
-//                        Text("喜好")
-//                    }
-//                    .tag(TabSelection.favorite)
+                FollowUserView(sharedInfo: sharedInfo)
+                    .tabItem {
+                        Image(SF: .personTabItem)
+                        Text("使用者")
+                    }
+                    .tag(TabSelection.followUser)
             }
             
             VStack {
@@ -43,7 +43,7 @@ struct RootView: View {
 
 extension RootView {
     enum TabSelection: Int {
-        case all, favorite
+        case all, followUser
     }
 }
 

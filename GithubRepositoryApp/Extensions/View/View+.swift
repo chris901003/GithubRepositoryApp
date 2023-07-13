@@ -24,4 +24,12 @@ extension View {
         padding(types[0], sizes[0] == 0 ? 16 : sizes[0])
             .padding(types[1], sizes[1] == 0 ? 16 : sizes[1])
     }
+    
+    func tapDismissView(isShow: Binding<Bool>) -> some View {
+        onTapGesture {
+            withAnimation {
+                isShow.wrappedValue = false
+            }
+        }
+    }
 }

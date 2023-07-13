@@ -20,6 +20,12 @@ extension URLSession {
         config.urlCache = .repoInfoCache
         return .init(configuration: config)
     }()
+    
+    static let userSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        config.urlCache = .userInfoCache
+        return .init(configuration: config)
+    }()
 }
 
 extension URLSession {

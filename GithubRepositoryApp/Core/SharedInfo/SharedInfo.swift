@@ -11,6 +11,7 @@ import Foundation
 final class SharedInfo: ObservableObject {
     
     @Published var allRepo: [RepositoryModel] = []
+    @Published var allFollowUser: [UserFollowModel] = []
     
     @Published var alertType: GitRepoAlertView.AlterType? = nil
     @Published var alertMessage: (any RawRepresentable & LocalizedError)? = nil
@@ -18,6 +19,12 @@ final class SharedInfo: ObservableObject {
 
 // MARK: 公開的函數
 extension SharedInfo {
+    /// 設定顯示提醒必要資訊
+    func changeAlertStatus(type: GitRepoAlertView.AlterType, message: (any RawRepresentable & LocalizedError)) {
+        self.alertMessage = message
+        self.alertType = type
+    }
+    
     /// 獲取以保存的倉庫資料
     func fetchAllRepo() throws {
         self.allRepo = try UserDefaultManager.shared.fetchDataCodable(key: .repoList)
@@ -37,6 +44,7 @@ extension SharedInfo {
         for _ in 0..<repos {
             result.allRepo.append(.init(repoLink: String.randomString(length: 10)! + "/" + String.randomString(length: 10)!))
         }
+        result.allFollowUser.append(.mock())
         return result
     }
 }
