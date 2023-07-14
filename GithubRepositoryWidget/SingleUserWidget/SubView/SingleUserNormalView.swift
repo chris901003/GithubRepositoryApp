@@ -62,7 +62,7 @@ struct SingleUserNormalView: View {
                         ForEach(detailInfo.repos) { repoInfo in
                             HStack(spacing: 4) {
                                 Text(repoInfo.name).fontSizeWithBold(.caption2)
-                                Text("\(repoInfo.lastUpdatePassTime)days").fontSizeWithBold(.caption2)
+                                Text("\(repoInfo.lastUpdatePassTime)days").fontColorBold(.caption2, repoInfo.updatePassTimeColor)
                             }
                         }
                     }

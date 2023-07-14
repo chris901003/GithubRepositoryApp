@@ -25,11 +25,28 @@ extension IntentHandler: SingleRepoSelectIntentHandling {
             let repoLinks = repoInfo.map { $0.repoLink }
             return INObjectCollection(items: repoLinks as [NSString])
         } catch {
-            return INObjectCollection(items: ["Hello world"] as [NSString])
+            return INObjectCollection(items: ["Placeholder"] as [NSString])
         }
     }
     
     func defaultRepository(for intent: SingleRepoSelectIntent) -> String? {
+        return "Placeholder"
+    }
+}
+
+// MARK: SingleUserWidget Intents Selections
+extension IntentHandler: SingleUserSelectIntentHandling {
+    func provideUserOptionsCollection(for intent: SingleUserSelectIntent) async throws -> INObjectCollection<NSString> {
+        do {
+            let userInfo: [UserFollowModel] = try UserDefaultManager.shared.fetchDataCodable(key: .userList)
+            let userNames = userInfo.map { $0.user }
+            return INObjectCollection(items: userNames as [NSString])
+        } catch {
+            return INObjectCollection(items: ["Placeholder"] as [NSString])
+        }
+    }
+    
+    func defaultUser(for intent: SingleUserSelectIntent) -> String? {
         return "Placeholder"
     }
 }

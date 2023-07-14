@@ -40,8 +40,7 @@ extension FollowUserViewModel {
         }
         let urlRequest = URLRequest(url: url)
         do {
-            var userInfo = try await HttpRequestManager.shared.fetchData(urlRequest: urlRequest, dataType: UserFollowModel.self, session: .userSession)
-            try await userInfo.fetchUserPhotoData()
+            let userInfo = try await HttpRequestManager.shared.fetchData(urlRequest: urlRequest, dataType: UserFollowModel.self, session: .userSession)
             sharedInfo.allFollowUser.append(userInfo)
             sharedInfo.changeAlertStatus(type: .success, message: AddNewFollowUserError.success)
         } catch {

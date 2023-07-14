@@ -17,7 +17,7 @@ struct SingleUserWidgeteEntry: TimelineEntry {
 struct SingleUserWidget: Widget {
     let kind = "SingleUserWidgtet"
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: SingleUserWidgetProvider()) { entry in
+        IntentConfiguration(kind: kind, intent: SingleUserSelectIntent.self, provider: SingleUserWidgetProvider()) { entry in
             SingleUserWidgetView(viewInfo: entry.viewInfo)
         }
         .configurationDisplayName("監看指定使用者")
