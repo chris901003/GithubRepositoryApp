@@ -32,4 +32,15 @@ extension View {
             }
         }
     }
+    
+    /// 自動跳整sheet高度
+    func sheetAutoHeight<T>(keyType: T.Type, sheetHeight: Binding<CGFloat>) -> some View where T: PreferenceKey, T.Value: Equatable {
+        return overlay {
+            GeometryReader { proxy in
+                Color.clear.preference(key: keyType, value: proxy.size.height as! T.Value)
+            }
+            .onPreferenceChange(keyType, perform: { sheetHeight.wrappedValue = $0 as! CGFloat })
+            .presentationDetents([.height(sheetHeight.wrappedValue)])
+        }
+    }
 }

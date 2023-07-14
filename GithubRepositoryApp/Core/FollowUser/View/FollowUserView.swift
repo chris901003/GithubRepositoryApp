@@ -14,6 +14,7 @@ struct FollowUserView: View {
     @State var editMode: EditMode = .inactive
     @State var listSelection: Set<Int> = Set<Int>()
     @State var isShowHelper: Bool = false
+    @State var sheet: FollowUserDetail.Sheet? = nil
     
     private let vm: FollowUserViewModel
     
@@ -47,6 +48,7 @@ struct FollowUserView: View {
             .overlay {
                 helperSection
             }
+            .sheet(item: $sheet) { $0 }
         }
     }
 }
@@ -81,7 +83,21 @@ private extension FollowUserView {
         }
         .contentShape(Rectangle())
         .onTapGesture {
-            print("Press Me")
+            selectedUser(target: followUser)
+        }
+    }
+}
+
+private extension FollowUserView {
+    /// 獲取點擊對象的詳細資料，並且開啟sheet
+    func selectedUser(target: UserFollowModel) {
+        Task {
+            do {
+                let followUserDetail = try await vm.fetchUserInfo(userInfo: target)
+                sheet = .normal(followUserDetail)
+            } catch {
+                sheet = .noInternet
+            }
         }
     }
 }

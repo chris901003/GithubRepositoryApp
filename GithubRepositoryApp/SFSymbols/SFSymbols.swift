@@ -24,4 +24,6 @@ enum SFSymbols: String {
     case personTabItem = "person.fill"
     case paperPlane = "paperplane.fill"
     case questionMark = "questionmark.circle"
+    case twoPreson = "person.2.fill"
+    case twoArrow = "arrow.triangle.2.circlepath"
 }

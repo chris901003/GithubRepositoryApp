@@ -6,14 +6,18 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct FollowUserDetailModel: Identifiable {
+struct FollowUserDetailModel {
     // 使用者基本資料
     var basicInfo: UserFollowModel
-    // 提供ID
-    var id: Int { basicInfo.id }
     // 所有repo的資料
     var repos: [FollowUserRepo]
+}
+
+extension FollowUserDetailModel: Identifiable {
+    // 提供ID
+    var id: Int { basicInfo.id }
 }
 
 // MARK: FollowUserDetailModel Decodabe
@@ -28,7 +32,9 @@ extension FollowUserDetailModel {
     /// 獲取該使用者所擁有的倉庫資料
     mutating func fetchRepos() async throws {
         let urlRequest = URLRequest(url: self.basicInfo.reposURL)
-        self.repos = try await HttpRequestManager.shared.fetchData(urlRequest: urlRequest, dataType: [FollowUserRepo].self, session: .userSession)
+        var repos = try await HttpRequestManager.shared.fetchData(urlRequest: urlRequest, dataType: [FollowUserRepo].self, session: .userSession)
+        repos = repos.sorted(\.lastPushTime, decrease: true)
+        self.repos = repos
     }
 }
 
@@ -39,6 +45,34 @@ struct FollowUserRepo {
     var lastPushTime: String
     // Ex: "language": "Swift"
     var mainLanguage: String
+    // Ex: "name": "chris901003"
+    var name: String
+}
+
+extension FollowUserRepo: Identifiable {
+    var id: String { name }
+}
+
+extension FollowUserRepo {
+    // 最後更新時間與當前時間間隔日
+    var lastUpdatePassTime: Int {
+        let lastUpdateTime = lastPushTime.convertToDate() ?? .now
+        return Date.countDayPass(from: lastUpdateTime, to: .now)
+    }
+    // 根據最後更新到現在的間隔時間回傳一個顏色
+    var updatePassTimeColor: Color {
+        let dayPass: Int = lastUpdatePassTime
+        switch dayPass {
+            case 0...5:
+                return Color.green
+            case 6...15:
+                return Color.orange
+            case 16...:
+                return Color.pink
+            default:
+                return Color.black
+        }
+    }
 }
 
 // MARK: FollowUserRepo Decodable
@@ -47,6 +81,7 @@ extension FollowUserRepo: Decodable {
         case repoURL = "html_url"
         case lastPushTime = "pushed_at"
         case mainLanguage = "language"
+        case name = "name"
     }
     
     init(from decoder: Decoder) throws {
@@ -54,5 +89,6 @@ extension FollowUserRepo: Decodable {
         self.repoURL = try container.decode(String.self, forKey: .repoURL).toURL()!
         self.lastPushTime = try container.decode(String.self, forKey: .lastPushTime)
         self.mainLanguage = (try? container.decode(String.self, forKey: .mainLanguage)) ?? "Unknow"
+        self.name = try container.decode(String.self, forKey: .name)
     }
 }

@@ -52,8 +52,10 @@ extension FollowUserViewModel {
     }
     
     /// 獲取指定使用者詳細資料
-    func fetchUserInfo(userInfo: UserFollowModel) async {
-        
+    func fetchUserInfo(userInfo: UserFollowModel) async throws -> FollowUserDetailModel {
+        var followUserDetail: FollowUserDetailModel = .init(basicInfo: userInfo, repos: [])
+        try await followUserDetail.fetchRepos()
+        return followUserDetail
     }
 }
 

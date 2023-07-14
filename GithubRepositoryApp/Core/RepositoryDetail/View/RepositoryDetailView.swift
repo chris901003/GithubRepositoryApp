@@ -29,16 +29,18 @@ struct RepositoryDetailView: View {
                 repoOwnerView
             }
         }
-        .overlay {
-            GeometryReader { proxy in
-                Color.clear
-                    .preference(key: SheetSizePreference.self, value: proxy.size.height)
-            }
-        }
-        .onPreferenceChange(SheetSizePreference.self) {
-            sheetViewSize = $0
-        }
-        .presentationDetents([.height(sheetViewSize)])
+        .sheetAutoHeight(keyType: SheetSizePreference.self, sheetHeight: $sheetViewSize)
+//        .overlay {
+//            GeometryReader { proxy in
+//                Color.clear
+//                    .preference(key: SheetSizePreference.self, value: proxy.size.height)
+//            }
+//        }
+//        .onPreferenceChange(SheetSizePreference.self) {
+//            sheetViewSize = $0
+//        }
+//        .presentationDetents([.height(sheetViewSize)])
+        // 以上提供兩種方法
     }
 }
 

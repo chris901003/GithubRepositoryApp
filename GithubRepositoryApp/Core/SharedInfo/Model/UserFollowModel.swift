@@ -22,10 +22,13 @@ struct UserFollowModel: Identifiable {
     var publicRepos: Int
     // Ex: "repos_url": "https://api.github.com/users/chris901003/repos"
     var reposURL: URL
+    // Ex: "html_url": "https://github.com/chris901003"
+    var githubURL: URL
     // 須透過phtoLink額外獲取
     var photoData: Data?
 }
 
+// MARK: UserFollowModel Decodable
 extension UserFollowModel: Decodable {
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -35,6 +38,7 @@ extension UserFollowModel: Decodable {
         case followers = "followers"
         case publicRepos = "public_repos"
         case reposURL = "repos_url"
+        case githubURL = "html_url"
         case photoData = "photo_data"
     }
     
@@ -47,16 +51,27 @@ extension UserFollowModel: Decodable {
         self.followers = try container.decode(Int.self, forKey: .followers)
         self.publicRepos = try container.decode(Int.self, forKey: .publicRepos)
         self.reposURL = try container.decode(String.self, forKey: .reposURL).toURL()!
+        self.githubURL = try container.decode(String.self, forKey: .githubURL).toURL()!
         self.photoData = nil
     }
 }
 
+// MARK: UserFollowModel Encodable
 extension UserFollowModel: Encodable { }
+
+extension UserFollowModel {
+    /// 獲取圖像資料，並且保存到photoData當中，使得在小工具當中可以顯示頭像資料
+    mutating func fetchUserPhotoData() async throws {
+        let urlRequest = URLRequest(url: self.photoLink)
+        let uiImag = try await URLSession.imageSession.uiImage(request: urlRequest)
+        self.photoData = uiImag.jpegData(compressionQuality: 1)
+    }
+}
 
 
 // MARK: Mock Data
 extension UserFollowModel {
     static func mock() -> UserFollowModel {
-        .init(id: 622781590,user: "chris901003", name: "HE_SE", photoLink: "https://avatars.githubusercontent.com/u/75870128?v=4".toURL()!, followers: 1, publicRepos: 9, reposURL: "https://api.github.com/users/chris901003/repos".toURL()!)
+        .init(id: 622781590,user: "chris901003", name: "HE_SE", photoLink: "https://avatars.githubusercontent.com/u/75870128?v=4".toURL()!, followers: 1, publicRepos: 9, reposURL: "https://api.github.com/users/chris901003/repos".toURL()!, githubURL: "https://github.com/chris901003".toURL()!)
     }
 }
