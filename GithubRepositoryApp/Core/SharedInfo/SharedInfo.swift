@@ -15,6 +15,12 @@ final class SharedInfo: ObservableObject {
     
     @Published var alertType: GitRepoAlertView.AlterType? = nil
     @Published var alertMessage: (any RawRepresentable & LocalizedError)? = nil
+    
+    init() {
+        do {
+            self.allRepo = try fetchAllRepo(key: .repoList)
+        } catch { }
+    }
 }
 
 // MARK: 公開的函數
@@ -26,13 +32,13 @@ extension SharedInfo {
     }
     
     /// 獲取以保存的倉庫資料
-    func fetchAllRepo() throws {
-        self.allRepo = try UserDefaultManager.shared.fetchDataCodable(key: .repoList)
+    func fetchAllRepo<T: Codable>(key: UserDefaultManager.UserDefaultKey) throws -> [T] {
+        try UserDefaultManager.shared.fetchDataCodable(key: key)
     }
     
     /// 將當前的倉庫資料保存到UserDefault當中
-    func saveAllRepo() throws {
-        try UserDefaultManager.shared.updateDataCodable(key: .repoList, data: allRepo)
+    func saveAllRepo<T: Codable>(key: UserDefaultManager.UserDefaultKey, data: [T]) throws {
+        try UserDefaultManager.shared.updateDataCodable(key: key, data: data)
     }
 }
 

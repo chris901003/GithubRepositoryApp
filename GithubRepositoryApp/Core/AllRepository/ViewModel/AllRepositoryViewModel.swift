@@ -24,22 +24,11 @@ final class AllRepositoryViewModel {
 // MARK: 與SharedInfo操作相關
 extension AllRepositoryViewModel {
     
-    /// 獲取UserDefault當中保存的倉庫名稱
-    @MainActor
-    func fetchAllRepo() {
-        do {
-            try sharedInfo.fetchAllRepo()
-        } catch {
-            sharedInfo.alertMessage = LoadOrSaveRepoError.load
-            sharedInfo.alertType = .error
-        }
-    }
-    
     /// 將當前倉庫保存到UserDefault當中
     @MainActor
     func saveAllRepo() {
         do {
-            try sharedInfo.saveAllRepo()
+            try sharedInfo.saveAllRepo(key: .repoList, data: sharedInfo.allRepo)
         } catch {
             sharedInfo.alertMessage = LoadOrSaveRepoError.update
             sharedInfo.alertType = .error
