@@ -66,6 +66,30 @@
 		052138B02A543E1C003C7616 /* SharedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052138AF2A543E1C003C7616 /* SharedInfo.swift */; };
 		052138B32A54455D003C7616 /* AllRepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052138B22A54455D003C7616 /* AllRepositoryViewModel.swift */; };
 		052138B62A544F84003C7616 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052138B52A544F84003C7616 /* View+.swift */; };
+		0596F1F72A6171B60070E96C /* SingleUserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F1F62A6171B60070E96C /* SingleUserWidget.swift */; };
+		0596F1F82A6171B60070E96C /* SingleUserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F1F62A6171B60070E96C /* SingleUserWidget.swift */; };
+		0596F1F92A6171B60070E96C /* SingleUserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F1F62A6171B60070E96C /* SingleUserWidget.swift */; };
+		0596F1FA2A6171B60070E96C /* SingleUserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F1F62A6171B60070E96C /* SingleUserWidget.swift */; };
+		0596F1FC2A6176B70070E96C /* SingleUserWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F1FB2A6176B70070E96C /* SingleUserWidgetView.swift */; };
+		0596F1FD2A6176B70070E96C /* SingleUserWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F1FB2A6176B70070E96C /* SingleUserWidgetView.swift */; };
+		0596F1FE2A6176B70070E96C /* SingleUserWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F1FB2A6176B70070E96C /* SingleUserWidgetView.swift */; };
+		0596F1FF2A6176B70070E96C /* SingleUserWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F1FB2A6176B70070E96C /* SingleUserWidgetView.swift */; };
+		0596F2012A6176E80070E96C /* SingleUserWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F2002A6176E80070E96C /* SingleUserWidgetProvider.swift */; };
+		0596F2022A6176E80070E96C /* SingleUserWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F2002A6176E80070E96C /* SingleUserWidgetProvider.swift */; };
+		0596F2032A6176E80070E96C /* SingleUserWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F2002A6176E80070E96C /* SingleUserWidgetProvider.swift */; };
+		0596F2042A6176E80070E96C /* SingleUserWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F2002A6176E80070E96C /* SingleUserWidgetProvider.swift */; };
+		0596F2062A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F2052A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift */; };
+		0596F2072A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F2052A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift */; };
+		0596F2082A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F2052A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift */; };
+		0596F2092A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F2052A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift */; };
+		0596F20B2A617C530070E96C /* SingleUserNoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F20A2A617C530070E96C /* SingleUserNoInternetView.swift */; };
+		0596F20C2A617C530070E96C /* SingleUserNoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F20A2A617C530070E96C /* SingleUserNoInternetView.swift */; };
+		0596F20D2A617C530070E96C /* SingleUserNoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F20A2A617C530070E96C /* SingleUserNoInternetView.swift */; };
+		0596F20E2A617C530070E96C /* SingleUserNoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F20A2A617C530070E96C /* SingleUserNoInternetView.swift */; };
+		0596F2102A6180660070E96C /* SingleUserNormalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F20F2A6180660070E96C /* SingleUserNormalView.swift */; };
+		0596F2112A6180660070E96C /* SingleUserNormalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F20F2A6180660070E96C /* SingleUserNormalView.swift */; };
+		0596F2122A6180660070E96C /* SingleUserNormalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F20F2A6180660070E96C /* SingleUserNormalView.swift */; };
+		0596F2132A6180660070E96C /* SingleUserNormalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F20F2A6180660070E96C /* SingleUserNormalView.swift */; };
 		059AF5A82A56721E003A3BA4 /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5A72A56721E003A3BA4 /* Collection+.swift */; };
 		059AF5A92A5673A5003A3BA4 /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5A72A56721E003A3BA4 /* Collection+.swift */; };
 		059AF5AD2A56AE7F003A3BA4 /* RepositoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AF5AC2A56AE7F003A3BA4 /* RepositoryDetailView.swift */; };
@@ -221,6 +245,12 @@
 		052138B22A54455D003C7616 /* AllRepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRepositoryViewModel.swift; sourceTree = "<group>"; };
 		052138B52A544F84003C7616 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		052138B72A54506A003C7616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0596F1F62A6171B60070E96C /* SingleUserWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserWidget.swift; sourceTree = "<group>"; };
+		0596F1FB2A6176B70070E96C /* SingleUserWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserWidgetView.swift; sourceTree = "<group>"; };
+		0596F2002A6176E80070E96C /* SingleUserWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserWidgetProvider.swift; sourceTree = "<group>"; };
+		0596F2052A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserPlaceholderSnapshotView.swift; sourceTree = "<group>"; };
+		0596F20A2A617C530070E96C /* SingleUserNoInternetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserNoInternetView.swift; sourceTree = "<group>"; };
+		0596F20F2A6180660070E96C /* SingleUserNormalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserNormalView.swift; sourceTree = "<group>"; };
 		059AF5A72A56721E003A3BA4 /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
 		059AF5AC2A56AE7F003A3BA4 /* RepositoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailView.swift; sourceTree = "<group>"; };
 		059AF5B42A56FEAD003A3BA4 /* RepositoryDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailModel.swift; sourceTree = "<group>"; };
@@ -539,6 +569,35 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0596F1F32A6171200070E96C /* SingleUserWidget */ = {
+			isa = PBXGroup;
+			children = (
+				0596F1F52A6171990070E96C /* MainWidget */,
+				0596F1F42A6171830070E96C /* SubView */,
+			);
+			path = SingleUserWidget;
+			sourceTree = "<group>";
+		};
+		0596F1F42A6171830070E96C /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				0596F2052A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift */,
+				0596F20A2A617C530070E96C /* SingleUserNoInternetView.swift */,
+				0596F20F2A6180660070E96C /* SingleUserNormalView.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		0596F1F52A6171990070E96C /* MainWidget */ = {
+			isa = PBXGroup;
+			children = (
+				0596F1F62A6171B60070E96C /* SingleUserWidget.swift */,
+				0596F1FB2A6176B70070E96C /* SingleUserWidgetView.swift */,
+				0596F2002A6176E80070E96C /* SingleUserWidgetProvider.swift */,
+			);
+			path = MainWidget;
+			sourceTree = "<group>";
+		};
 		059AF5AA2A56AE55003A3BA4 /* RepositoryDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -699,6 +758,7 @@
 		05A3F3912A5C2DEC00B60475 /* GithubRepositoryWidget */ = {
 			isa = PBXGroup;
 			children = (
+				0596F1F32A6171200070E96C /* SingleUserWidget */,
 				05A3F3A12A5C2E2C00B60475 /* SingleRepoWidget */,
 				05A3F3922A5C2DEC00B60475 /* GithubRepositoryWidgetBundle.swift */,
 				05A3F3962A5C2DEE00B60475 /* Assets.xcassets */,
@@ -901,21 +961,27 @@
 				051096CE2A60E6650084EF58 /* Color+.swift in Sources */,
 				051096C72A60E1850084EF58 /* FollowUserDetailNoInternetView.swift in Sources */,
 				051096C92A60E3D50084EF58 /* SFSymbols.swift in Sources */,
+				0596F2132A6180660070E96C /* SingleUserNormalView.swift in Sources */,
 				051096BC2A60DABD0084EF58 /* FollowUserDetailView.swift in Sources */,
 				051096CF2A60E6680084EF58 /* Collection+.swift in Sources */,
+				0596F1FA2A6171B60070E96C /* SingleUserWidget.swift in Sources */,
 				051096CB2A60E6560084EF58 /* Text+.swift in Sources */,
 				051096912A5CE07A0084EF58 /* RepositoryModel.swift in Sources */,
 				051096CD2A60E6620084EF58 /* Sequence+.swift in Sources */,
 				051096C22A60E16A0084EF58 /* FollowUserDetailNormalView.swift in Sources */,
 				0510968D2A5CDF680084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
+				0596F2092A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift in Sources */,
 				051096D02A60E66E0084EF58 /* Date+.swift in Sources */,
 				051096B32A604B8C0084EF58 /* URLSession+.swift in Sources */,
 				051096B42A604B8F0084EF58 /* URLCache+.swift in Sources */,
+				0596F2042A6176E80070E96C /* SingleUserWidgetProvider.swift in Sources */,
 				051096B72A60D9C90084EF58 /* Http+HttpsRequestManager.swift in Sources */,
 				051096CC2A60E65A0084EF58 /* Shape+.swift in Sources */,
 				051096842A5CDF320084EF58 /* IntentHandler.swift in Sources */,
+				0596F1FF2A6176B70070E96C /* SingleUserWidgetView.swift in Sources */,
 				051096A72A5D78E00084EF58 /* String+.swift in Sources */,
 				051096CA2A60E6520084EF58 /* View+.swift in Sources */,
+				0596F20E2A617C530070E96C /* SingleUserNoInternetView.swift in Sources */,
 				051096C82A60E3C90084EF58 /* Image+.swift in Sources */,
 				051096B52A60D9B10084EF58 /* FollowUserDetailModel.swift in Sources */,
 				051096D12A60FAD60084EF58 /* CacheAsyncImageView.swift in Sources */,
@@ -933,8 +999,11 @@
 				052138A92A543BA8003C7616 /* Image+.swift in Sources */,
 				059AF5A82A56721E003A3BA4 /* Collection+.swift in Sources */,
 				059BF5C02A5550B3009985EB /* OperationOverloading.swift in Sources */,
+				0596F1FC2A6176B70070E96C /* SingleUserWidgetView.swift in Sources */,
 				059BF5C32A5553D9009985EB /* Sequence+.swift in Sources */,
 				059AF5CF2A57E356003A3BA4 /* Date+.swift in Sources */,
+				0596F2062A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift in Sources */,
+				0596F2012A6176E80070E96C /* SingleUserWidgetProvider.swift in Sources */,
 				051096792A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
 				059BF5B02A545B73009985EB /* GitRepoAlertView.swift in Sources */,
 				059AF5D22A584BE5003A3BA4 /* Http+HttpsRequestManager.swift in Sources */,
@@ -951,13 +1020,16 @@
 				052138AD2A543C8F003C7616 /* AllRepositoryView.swift in Sources */,
 				052138B32A54455D003C7616 /* AllRepositoryViewModel.swift in Sources */,
 				059BF5B42A546252009985EB /* Text+.swift in Sources */,
+				0596F20B2A617C530070E96C /* SingleUserNoInternetView.swift in Sources */,
 				0510969D2A5D46B10084EF58 /* FollowUserView.swift in Sources */,
 				051096BF2A60E16A0084EF58 /* FollowUserDetailNormalView.swift in Sources */,
 				059AF5B52A56FEAD003A3BA4 /* RepositoryDetailModel.swift in Sources */,
 				059BF5BD2A554B75009985EB /* RepositoryModel.swift in Sources */,
 				059AF5AD2A56AE7F003A3BA4 /* RepositoryDetailView.swift in Sources */,
 				059AF5C62A57ABCE003A3BA4 /* CacheAsyncImageView.swift in Sources */,
+				0596F1F72A6171B60070E96C /* SingleUserWidget.swift in Sources */,
 				059AF5B82A57066C003A3BA4 /* RepositoryOwnerModel.swift in Sources */,
+				0596F2102A6180660070E96C /* SingleUserNormalView.swift in Sources */,
 				05A3F3822A5BEFB600B60475 /* UserDefaultManager.swift in Sources */,
 				059BF5BA2A55346E009985EB /* String+.swift in Sources */,
 				052138A62A543A1E003C7616 /* SFSymbols.swift in Sources */,
@@ -979,15 +1051,20 @@
 				059BF5D92A55C8B6009985EB /* GitRepoAlertView.swift in Sources */,
 				051096C02A60E16A0084EF58 /* FollowUserDetailNormalView.swift in Sources */,
 				051096B02A5DA3310084EF58 /* FollowUserDetailModel.swift in Sources */,
+				0596F2112A6180660070E96C /* SingleUserNormalView.swift in Sources */,
 				059AF5C72A57ABCE003A3BA4 /* CacheAsyncImageView.swift in Sources */,
 				059AF5D52A58564C003A3BA4 /* Http+HttpsRequestManagerTest.swift in Sources */,
 				051096992A5CE9910084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
+				0596F1FD2A6176B70070E96C /* SingleUserWidgetView.swift in Sources */,
 				059AF5B62A56FEAD003A3BA4 /* RepositoryDetailModel.swift in Sources */,
 				059AF5CC2A57B775003A3BA4 /* URLSession+uiImageTest.swift in Sources */,
 				059AF5D32A585638003A3BA4 /* Http+HttpsRequestManager.swift in Sources */,
 				051096AA2A5D8BE10084EF58 /* UserFollowModel.swift in Sources */,
+				0596F20C2A617C530070E96C /* SingleUserNoInternetView.swift in Sources */,
 				059AF5D62A58570F003A3BA4 /* Date+.swift in Sources */,
+				0596F1F82A6171B60070E96C /* SingleUserWidget.swift in Sources */,
 				059BF5E22A55C95E009985EB /* Image+.swift in Sources */,
+				0596F2072A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift in Sources */,
 				059BF5DC2A55C931009985EB /* OperationOverloading.swift in Sources */,
 				059BF5D72A55C6F6009985EB /* SharedInfo.swift in Sources */,
 				051096B22A603D180084EF58 /* FollowUserDetailModelTest.swift in Sources */,
@@ -995,6 +1072,7 @@
 				05A3F3762A5956E100B60475 /* RepositoryDetailModelTest.swift in Sources */,
 				059BF5DA2A55C8D0009985EB /* String+.swift in Sources */,
 				05A3F3772A59595600B60475 /* ModifyInStruct.swift in Sources */,
+				0596F2022A6176E80070E96C /* SingleUserWidgetProvider.swift in Sources */,
 				059BF5DE2A55C94C009985EB /* Color+.swift in Sources */,
 				059AF5C02A57AB1B003A3BA4 /* URLSession+.swift in Sources */,
 				051096A92A5D8BDA0084EF58 /* UserFollowModelTest.swift in Sources */,
@@ -1026,6 +1104,7 @@
 				05A3F3A72A5C356500B60475 /* RepositoryOwnerModel.swift in Sources */,
 				05A3F3B62A5C35AB00B60475 /* Http+HttpsRequestManager.swift in Sources */,
 				05A3F3B82A5C35B000B60475 /* CacheAsyncImageView.swift in Sources */,
+				0596F2082A6177320070E96C /* SingleUserPlaceholderSnapshotView.swift in Sources */,
 				05A3F3C12A5C378700B60475 /* Placeholder+SnapshotView.swift in Sources */,
 				05A3F3AC2A5C358600B60475 /* Collection+.swift in Sources */,
 				05A3F3C92A5C533700B60475 /* SingleRepoWidgetView.swift in Sources */,
@@ -1034,12 +1113,14 @@
 				05A3F3A82A5C357A00B60475 /* String+.swift in Sources */,
 				05A3F3C32A5C409500B60475 /* NoInternetView.swift in Sources */,
 				05A3F3C52A5C454000B60475 /* RepoInfoView.swift in Sources */,
+				0596F2122A6180660070E96C /* SingleUserNormalView.swift in Sources */,
 				05A3F3BE2A5C35D000B60475 /* RepositoryModel.swift in Sources */,
 				05A3F3BC2A5C35C500B60475 /* RepositoryDetailView.swift in Sources */,
 				05A3F3AA2A5C358100B60475 /* URLSession+.swift in Sources */,
 				05A3F3B42A5C35A500B60475 /* ModifyInStruct.swift in Sources */,
 				051096A52A5D4FB40084EF58 /* UserFollowModel.swift in Sources */,
 				05A3F3AB2A5C358300B60475 /* URLCache+.swift in Sources */,
+				0596F20D2A617C530070E96C /* SingleUserNoInternetView.swift in Sources */,
 				05A3F3B72A5C35AD00B60475 /* UserDefaultManager.swift in Sources */,
 				05A3F3C72A5C530300B60475 /* SingleRepoProvider.swift in Sources */,
 				0510967A2A5CDD400084EF58 /* GihubRepositoryIntents.intentdefinition in Sources */,
@@ -1050,9 +1131,12 @@
 				05A3F3BA2A5C35BB00B60475 /* AllRepositoryViewModel.swift in Sources */,
 				05A3F3A52A5C355200B60475 /* SingleRepoWidget.swift in Sources */,
 				05A3F3BD2A5C35C900B60475 /* RootView.swift in Sources */,
+				0596F1F92A6171B60070E96C /* SingleUserWidget.swift in Sources */,
+				0596F2032A6176E80070E96C /* SingleUserWidgetProvider.swift in Sources */,
 				05A3F3A62A5C356300B60475 /* RepositoryDetailModel.swift in Sources */,
 				05A3F3BB2A5C35BE00B60475 /* AllRepositoryView.swift in Sources */,
 				05A3F3AF2A5C359300B60475 /* Shape+.swift in Sources */,
+				0596F1FE2A6176B70070E96C /* SingleUserWidgetView.swift in Sources */,
 				0510969E2A5D46B10084EF58 /* FollowUserView.swift in Sources */,
 				051096C62A60E1850084EF58 /* FollowUserDetailNoInternetView.swift in Sources */,
 			);

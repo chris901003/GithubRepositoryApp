@@ -12,5 +12,6 @@ import SwiftUI
 struct GithubRepositoryWidgetBundle: WidgetBundle {
     var body: some Widget {
         SingleRepoWidget()
+        SingleUserWidget()
     }
 }

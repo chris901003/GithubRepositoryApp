@@ -52,7 +52,7 @@ extension UserFollowModel: Decodable {
         self.publicRepos = try container.decode(Int.self, forKey: .publicRepos)
         self.reposURL = try container.decode(String.self, forKey: .reposURL).toURL()!
         self.githubURL = try container.decode(String.self, forKey: .githubURL).toURL()!
-        self.photoData = nil
+        self.photoData = try? container.decode(Data.self, forKey: .photoData)
     }
 }
 
