@@ -19,6 +19,7 @@ final class SharedInfo: ObservableObject {
     init() {
         do {
             self.allRepo = try fetchAllRepo(key: .repoList)
+            self.allFollowUser = try fetchAllRepo(key: .userList)
         } catch { }
     }
 }

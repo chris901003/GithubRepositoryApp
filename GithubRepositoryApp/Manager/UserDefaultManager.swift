@@ -77,5 +77,6 @@ extension UserDefaultManager {
 extension UserDefaultManager {
     enum UserDefaultKey: String, CaseIterable {
         case repoList = "RepoList"
+        case userList = "UserList"
     }
 }

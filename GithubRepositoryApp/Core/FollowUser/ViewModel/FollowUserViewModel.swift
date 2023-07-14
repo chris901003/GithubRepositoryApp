@@ -6,15 +6,18 @@
 //
 
 import Foundation
+import Combine
 
 class FollowUserViewModel {
     
     // Private Variable
     private let sharedInfo: SharedInfo
+    private var userFollowCancelable: AnyCancellable? = nil
     
     // Init Function
     init(sharedInfo: SharedInfo) {
         self.sharedInfo = sharedInfo
+        Task { await self.subscribeFollowUser() }
     }
 }
 
@@ -37,7 +40,8 @@ extension FollowUserViewModel {
         }
         let urlRequest = URLRequest(url: url)
         do {
-            let userInfo = try await HttpRequestManager.shared.fetchData(urlRequest: urlRequest, dataType: UserFollowModel.self, session: .userSession)
+            var userInfo = try await HttpRequestManager.shared.fetchData(urlRequest: urlRequest, dataType: UserFollowModel.self, session: .userSession)
+            try await userInfo.fetchUserPhotoData()
             sharedInfo.allFollowUser.append(userInfo)
             sharedInfo.changeAlertStatus(type: .success, message: AddNewFollowUserError.success)
         } catch {
@@ -57,6 +61,27 @@ extension FollowUserViewModel {
         try await followUserDetail.fetchRepos()
         return followUserDetail
     }
+    
+    @MainActor
+    func saveFollowUser() {
+        do {
+            try sharedInfo.saveAllRepo(key: .userList, data: sharedInfo.allFollowUser)
+        } catch {
+            sharedInfo.alertType = .error
+            sharedInfo.alertMessage = SaveDataError.updateAllFollowUserError
+        }
+    }
+}
+
+private extension FollowUserViewModel {
+    // 追蹤變更
+    @MainActor
+    func subscribeFollowUser() {
+        userFollowCancelable = sharedInfo.$allFollowUser
+            .debounce(for: 0.5, scheduler: DispatchQueue.main)
+            .receive(on: DispatchQueue.main)
+            .sink {[weak self] _ in self?.saveFollowUser() }
+    }
 }
 
 extension FollowUserViewModel {
@@ -67,5 +92,9 @@ extension FollowUserViewModel {
         case internet = "網路連線失敗，或是查無此人"
         case fetching = "獲取資料中"
         case success = "成功添加"
+    }
+    
+    enum SaveDataError: String, LocalizedError {
+        case updateAllFollowUserError = "無法保存資料"
     }
 }
